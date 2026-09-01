@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Haru Caiçara</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+            SUSHI HOUSE
+        </div>
+
+        <div class="restaurante">
+
+            <h1>SUSHI HOUSE DELIVERY</h1>
+
+            <p>
+                <span class="aberto">
+                    ● Aberto até às 23h00
+                </span>
+                · 📍 PORCINCULA - RJ
+            </p>
+
+            <p>
+                Pedido mínimo:
+                <strong>R$ 30,00</strong>
+            </p>
+
+            <div class="entrega">
+
+                <button>
+                    🏍️ Entrega ~120 min
+                </button>
+
+                <button>
+                    🏪 Retirada ~30 min
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="pesquisa">
+
+        <span>🔍</span>
+
+        <input type="text"
+               id="campoPesquisa"
+               placeholder="Busque por um produto">
+
+        <button>☰</button>
+
+    </div>
+
+
+    <nav class="categorias">
+
+        <a href="#destaques">Destaques</a>
+
+        <a href="#combos">Combos</a>
+
+        <a href="#entradas">Entradas</a>
+
+        <a href="#niguiris">Niguiris</a>
+
+        <a href="#sashimi">Sashimi</a>
+
+        <a href="#temaki">Temaki</a>
+
+        <a href="#bebidas">Bebidas</a>
+
+    </nav>
+
+
+    <main>
+
+        <section id="destaques" class="secao">
+
+            <h2>Destaques</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <span class="destaque">
+                            ⭐ DESTAQUE
+                        </span>
+
+                        <h3>Dupla Sushi no Copo</h3>
+
+                        <p>
+                            Mais de 300g. Uma refeição rápida,
+                            prática e saborosa.
+                        </p>
+
+                        <div class="precos">
+
+                            <strong>R$ 65,90</strong>
+
+                            <span class="preco-antigo">
+                                R$ 69,90
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Dupla Sushi no Copo', 65.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="combos" class="secao">
+
+            <h2>Combos</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Combo Haru 1</h3>
+
+                        <p>
+                            20 peças com sashimi, niguiri,
+                            uramaki e hossomaki.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 65,90</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Combo Haru 1', 65.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="entradas" class="secao">
+
+            <h2>Entradas</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Batata Frita</h3>
+
+                        <p>
+                            Porção crocante com aproximadamente 300g.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 24,90</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Batata Frita', 24.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="niguiris" class="secao">
+
+            <h2>Niguiris</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Niguiri Salmão</h3>
+
+                        <p>
+                            Dupla de niguiris preparados
+                            com salmão fresco.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 18,90</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Niguiri Salmão', 18.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="sashimi" class="secao">
+
+            <h2>Sashimi</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Sashimi Salmão</h3>
+
+                        <p>
+                            Fatias selecionadas de salmão fresco.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 29,90</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Sashimi Salmão', 29.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="temaki" class="secao">
+
+            <h2>Temaki</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Temaki Salmão</h3>
+
+                        <p>
+                            Temaki de salmão com cream cheese.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 29,90</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Temaki Salmão', 29.90)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="bebidas" class="secao">
+
+            <h2>Bebidas</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Coca-Cola Lata</h3>
+
+                        <p>
+                            Coca-Cola 350ml.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 7,00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-produto">
+                        FOTO
+                    </div>
+
+                    <button class="adicionar"
+                            onclick="adicionarProduto('Coca-Cola Lata', 7.00)">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="menu-inferior">
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            🏠
+            <span>Início</span>
+        </button>
+
+        <button onclick="abrirCarrinho()">
+            🛒
+            <span>Carrinho</span>
+        </button>
+
+        <button onclick="mostrarMenu()">
+            ☰
+            <span>Menu</span>
+        </button>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

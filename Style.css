@@ -1,0 +1,414 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 90px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: #fff5f8;
+    color: #2b1720;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    padding: 28px 16px 15px;
+    text-align: center;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 3px solid #e9a3b8;
+    border-radius: 50%;
+    color: #8f2948;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(143, 41, 72, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.restaurante {
+    margin-top: -10px;
+    padding: 42px 18px 25px;
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 6px 25px rgba(143, 41, 72, 0.08);
+}
+
+    .restaurante h1 {
+        margin: 0 0 12px;
+        color: #7d2540;
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+        letter-spacing: 0.5px;
+    }
+
+.info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #80636c;
+    font-size: 15px;
+}
+
+.aberto {
+    color: #299761;
+    font-weight: 700;
+}
+
+.restaurante p {
+    color: #80636c;
+}
+
+    .restaurante p strong {
+        color: #44202b;
+    }
+
+.entrega {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+    .entrega button {
+        padding: 12px 18px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        border: 1px solid #efc5d1;
+        background: #fff8fa;
+        color: #542735;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+        transition: 0.2s;
+    }
+
+        .entrega button:hover {
+            background: #fbe0e8;
+            transform: translateY(-2px);
+        }
+
+    .entrega small {
+        color: #98727e;
+    }
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.pesquisa {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    height: 60px;
+    margin: 10px 16px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #f1d5dd;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(143, 41, 72, 0.10);
+}
+
+    .pesquisa span {
+        font-size: 21px;
+    }
+
+    .pesquisa input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #44202b;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 17px;
+    }
+
+        .pesquisa input::placeholder {
+            color: #ad8c96;
+        }
+
+    .pesquisa button {
+        border: none;
+        background: transparent;
+        color: #8f2948;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+.categorias {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 16px 20px;
+    scrollbar-width: none;
+}
+
+    .categorias::-webkit-scrollbar {
+        display: none;
+    }
+
+    .categorias a {
+        flex-shrink: 0;
+        padding: 12px 22px;
+        background: #fff;
+        border: 1px solid #efc5d1;
+        border-radius: 30px;
+        color: #70263d;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+        .categorias a:hover {
+            background: #f9dce5;
+            transform: translateY(-2px);
+        }
+
+        .categorias a:first-child {
+            background: #8f2948;
+            border-color: #8f2948;
+            color: #fff;
+        }
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+    margin-bottom: 40px;
+    padding: 0 20px;
+    scroll-margin-top: 90px;
+}
+
+    .secao h2 {
+        margin-bottom: 16px;
+        color: #71243c;
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+        letter-spacing: 0.2px;
+    }
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.produto {
+    min-height: 160px;
+    padding: 14px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 15px;
+    background: #fff;
+    border: 1px solid #f3dce2;
+    border-radius: 22px;
+    box-shadow: 0 4px 15px rgba(143, 41, 72, 0.07);
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+    .produto:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(143, 41, 72, 0.12);
+    }
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.produto h3 {
+    margin: 6px 0 7px;
+    color: #3b1b25;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.produto p {
+    margin: 0;
+    color: #806b73;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.produto img {
+    width: 160px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 17px;
+    background: #f9e7ec;
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque {
+    width: fit-content;
+    padding: 5px 10px;
+    background: #f9dce5;
+    color: #8f2948;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   PREÇOS
+========================= */
+
+.precos {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .precos strong {
+        color: #9a3152;
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+.preco-antigo {
+    color: #aa939b;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOTÃO +
+========================= */
+
+.adicionar {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #8f2948;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(143, 41, 72, 0.25);
+    transition: 0.2s;
+}
+
+    .adicionar:hover {
+        background: #702038;
+        transform: scale(1.08);
+    }
+
+
+/* =========================
+   MENU INFERIOR
+========================= */
+
+.menu-inferior {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 20;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #efd8df;
+    box-shadow: 0 -5px 20px rgba(143, 41, 72, 0.08);
+}
+
+    .menu-inferior button {
+        flex: 1;
+        border: none;
+        background: transparent;
+        color: #927681;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+    }
+
+        .menu-inferior button span {
+            font-size: 22px;
+        }
+
+        .menu-inferior button:hover {
+            color: #8f2948;
+        }
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .produto {
+        grid-template-columns: 1fr 135px;
+    }
+
+        .produto img {
+            width: 135px;
+            height: 125px;
+        }
+
+        .produto h3 {
+            font-size: 19px;
+        }
+
+        .produto p {
+            font-size: 14px;
+        }
+
+    .secao {
+        padding: 0 15px;
+    }
+}
