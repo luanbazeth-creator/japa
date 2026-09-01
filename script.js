@@ -92,7 +92,7 @@ function abrirCarrinho() {
 function mostrarMenu() {
 
     alert(
-        "🍣 HARU CAIÇARA\n\n" +
+        "🍣 SUSHI HOUSE\n\n" +
         "Escolha uma categoria no menu acima."
     );
 }
