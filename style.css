@@ -1,4 +1,9 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
 
 * {
     box-sizing: border-box;
@@ -11,131 +16,157 @@ html {
 body {
     margin: 0;
     padding-bottom: 90px;
-    font-family: 'DM Sans', Arial, sans-serif;
-    background: #fff5f8;
-    color: #2b1720;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: radial-gradient(circle at top, #171717 0%, #090909 55%, #050505 100%);
+    color: #f4ead5;
 }
 
 
-/* =========================
+/* =====================================================
    CABEÇALHO
-========================= */
+===================================================== */
 
 .cabecalho {
-    padding: 28px 16px 15px;
+    padding: 25px 16px 20px;
     text-align: center;
 }
 
+
+/* LOGO */
+
 .logo {
-    width: 90px;
-    height: 90px;
+    width: 210px;
+    min-height: 110px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fff;
-    border: 3px solid #e9a3b8;
-    border-radius: 50%;
-    color: #8f2948;
+    color: #e6c16a;
     font-family: 'Playfair Display', serif;
-    font-size: 23px;
-    font-weight: 700;
-    box-shadow: 0 6px 20px rgba(143, 41, 72, 0.15);
     position: relative;
-    z-index: 2;
 }
 
+    .logo span {
+        font-size: 46px;
+        line-height: 0.9;
+        letter-spacing: 3px;
+        color: #f4ead5;
+    }
+
+    .logo small {
+        margin-top: 7px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 7px;
+        color: #c89b3c;
+    }
+
+    .logo b {
+        margin-top: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 6px;
+        color: #f4ead5;
+    }
+
+
+/* RESTAURANTE */
+
 .restaurante {
-    margin-top: -10px;
-    padding: 42px 18px 25px;
-    background: #fff;
-    border-radius: 28px;
-    box-shadow: 0 6px 25px rgba(143, 41, 72, 0.08);
+    margin-top: 10px;
+    padding: 25px 18px;
+    background: rgba(16, 16, 16, 0.96);
+    border: 1px solid #6e5525;
+    border-radius: 4px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(197, 153, 60, 0.04);
 }
 
     .restaurante h1 {
         margin: 0 0 12px;
-        color: #7d2540;
+        color: #d9b65c;
         font-family: 'Playfair Display', serif;
         font-size: 30px;
-        letter-spacing: 0.5px;
+        letter-spacing: 2px;
     }
+
+    .restaurante p {
+        color: #bdb5a7;
+        font-size: 14px;
+    }
+
+        .restaurante p strong {
+            color: #f0d58b;
+        }
 
 .info {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    color: #80636c;
-    font-size: 15px;
 }
 
 .aberto {
-    color: #299761;
+    color: #72b982;
     font-weight: 700;
 }
 
-.restaurante p {
-    color: #80636c;
-}
 
-    .restaurante p strong {
-        color: #44202b;
-    }
+/* ENTREGA */
 
 .entrega {
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 18px;
 }
 
     .entrega button {
-        padding: 12px 18px;
+        padding: 11px 17px;
         display: flex;
         align-items: center;
         gap: 7px;
-        border: 1px solid #efc5d1;
-        background: #fff8fa;
-        color: #542735;
-        border-radius: 30px;
+        border: 1px solid #705727;
+        background: #121212;
+        color: #dfc984;
+        border-radius: 3px;
         cursor: pointer;
-        font-family: 'DM Sans', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         transition: 0.2s;
     }
 
         .entrega button:hover {
-            background: #fbe0e8;
+            background: #201b12;
+            border-color: #c69b3c;
             transform: translateY(-2px);
         }
 
-    .entrega small {
-        color: #98727e;
-    }
 
-
-/* =========================
+/* =====================================================
    PESQUISA
-========================= */
+===================================================== */
 
 .pesquisa {
     position: sticky;
     top: 10px;
     z-index: 10;
-    height: 60px;
+    height: 58px;
     margin: 10px 16px;
     padding: 0 18px;
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #fff;
-    border: 1px solid #f1d5dd;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(143, 41, 72, 0.10);
+    background: #111;
+    border: 1px solid #594720;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.55);
 }
 
     .pesquisa span {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .pesquisa input {
@@ -143,33 +174,33 @@ body {
         border: none;
         outline: none;
         background: transparent;
-        color: #44202b;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 17px;
+        color: #f5ead4;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
     }
 
         .pesquisa input::placeholder {
-            color: #ad8c96;
+            color: #777268;
         }
 
     .pesquisa button {
         border: none;
         background: transparent;
-        color: #8f2948;
-        font-size: 24px;
+        color: #d2ad52;
+        font-size: 22px;
         cursor: pointer;
     }
 
 
-/* =========================
+/* =====================================================
    CATEGORIAS
-========================= */
+===================================================== */
 
 .categorias {
     display: flex;
-    gap: 10px;
+    gap: 9px;
     overflow-x: auto;
-    padding: 10px 16px 20px;
+    padding: 10px 16px 25px;
     scrollbar-width: none;
 }
 
@@ -179,75 +210,92 @@ body {
 
     .categorias a {
         flex-shrink: 0;
-        padding: 12px 22px;
-        background: #fff;
-        border: 1px solid #efc5d1;
-        border-radius: 30px;
-        color: #70263d;
+        padding: 10px 17px;
+        background: #111;
+        border: 1px solid #594720;
+        border-radius: 3px;
+        color: #d8c18a;
         text-decoration: none;
+        font-size: 13px;
         font-weight: 600;
         transition: 0.2s;
     }
 
         .categorias a:hover {
-            background: #f9dce5;
-            transform: translateY(-2px);
+            background: #211c12;
+            border-color: #c69b3c;
+            color: #f2d98d;
         }
 
         .categorias a:first-child {
-            background: #8f2948;
-            border-color: #8f2948;
-            color: #fff;
+            background: #c49a3c;
+            border-color: #c49a3c;
+            color: #080808;
         }
 
 
-/* =========================
+/* =====================================================
    SEÇÕES
-========================= */
+===================================================== */
 
 .secao {
-    margin-bottom: 40px;
+    margin-bottom: 42px;
     padding: 0 20px;
     scroll-margin-top: 90px;
 }
 
     .secao h2 {
-        margin-bottom: 16px;
-        color: #71243c;
+        position: relative;
+        margin: 0 0 18px;
+        padding-bottom: 10px;
+        color: #d7b65d;
         font-family: 'Playfair Display', serif;
-        font-size: 30px;
-        letter-spacing: 0.2px;
+        font-size: 27px;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #5b4720;
     }
 
+        .secao h2::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background: #c79c3c;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+        }
 
-/* =========================
+
+/* =====================================================
    PRODUTOS
-========================= */
+===================================================== */
 
 .produtos {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
 .produto {
-    min-height: 160px;
-    padding: 14px;
+    min-height: 130px;
+    padding: 17px;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 160px;
+    grid-template-columns: 1fr 150px;
     gap: 15px;
-    background: #fff;
-    border: 1px solid #f3dce2;
-    border-radius: 22px;
-    box-shadow: 0 4px 15px rgba(143, 41, 72, 0.07);
+    background: linear-gradient( 145deg, #121212, #0c0c0c );
+    border: 1px solid #3d321b;
+    border-radius: 4px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
     overflow: hidden;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
     .produto:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 22px rgba(143, 41, 72, 0.12);
+        border-color: #79602a;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
 
 .produto-info {
@@ -257,47 +305,49 @@ body {
 }
 
 .produto h3 {
-    margin: 6px 0 7px;
-    color: #3b1b25;
+    margin: 4px 0 8px;
+    color: #f0e6d2;
     font-family: 'Playfair Display', serif;
-    font-size: 21px;
+    font-size: 20px;
+    letter-spacing: 0.3px;
 }
 
 .produto p {
     margin: 0;
-    color: #806b73;
-    line-height: 1.4;
-    font-size: 15px;
+    color: #99948a;
+    line-height: 1.45;
+    font-size: 13px;
 }
 
 .produto img {
-    width: 160px;
-    height: 135px;
+    width: 150px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 17px;
-    background: #f9e7ec;
+    border-radius: 3px;
+    border: 1px solid #594720;
+    background: #151515;
 }
 
 
-/* =========================
+/* =====================================================
    DESTAQUE
-========================= */
+===================================================== */
 
 .destaque {
     width: fit-content;
-    padding: 5px 10px;
-    background: #f9dce5;
-    color: #8f2948;
-    border-radius: 8px;
-    font-size: 11px;
+    padding: 5px 9px;
+    background: #c69b3c;
+    color: #0b0b0b;
+    border-radius: 2px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.3px;
+    letter-spacing: 1px;
 }
 
 
-/* =========================
+/* =====================================================
    PREÇOS
-========================= */
+===================================================== */
 
 .precos {
     margin-top: auto;
@@ -307,47 +357,47 @@ body {
 }
 
     .precos strong {
-        color: #9a3152;
-        font-size: 21px;
+        color: #e1bd63;
+        font-size: 20px;
         font-weight: 700;
     }
 
 .preco-antigo {
-    color: #aa939b;
+    color: #777268;
     text-decoration: line-through;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
-/* =========================
+/* =====================================================
    BOTÃO +
-========================= */
+===================================================== */
 
 .adicionar {
     position: absolute;
-    right: 22px;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    border: none;
+    right: 15px;
+    bottom: 15px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #e0b84f;
     border-radius: 50%;
-    background: #8f2948;
-    color: white;
-    font-size: 27px;
+    background: #c99d3d;
+    color: #080808;
+    font-size: 25px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(143, 41, 72, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: 0.2s;
 }
 
     .adicionar:hover {
-        background: #702038;
+        background: #e3c56d;
         transform: scale(1.08);
     }
 
 
-/* =========================
+/* =====================================================
    MENU INFERIOR
-========================= */
+===================================================== */
 
 .menu-inferior {
     position: fixed;
@@ -357,72 +407,73 @@ body {
     height: 75px;
     z-index: 20;
     display: flex;
-    background: #fff;
-    border-top: 1px solid #efd8df;
-    box-shadow: 0 -5px 20px rgba(143, 41, 72, 0.08);
+    background: #0c0c0c;
+    border-top: 1px solid #4d3b1d;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
 }
 
     .menu-inferior button {
         flex: 1;
         border: none;
         background: transparent;
-        color: #927681;
+        color: #8d877c;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 4px;
         cursor: pointer;
-        font-family: 'DM Sans', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
 
         .menu-inferior button span {
-            font-size: 22px;
+            font-size: 12px;
         }
 
+        .menu-inferior button:first-child,
         .menu-inferior button:hover {
-            color: #8f2948;
+            color: #d5ae52;
         }
 
 
-/* =========================
-   CELULAR
-========================= */
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
-@media (max-width: 600px) {
-
-    .produto {
-        grid-template-columns: 1fr 135px;
-    }
-
-        .produto img {
-            width: 135px;
-            height: 125px;
-        }
-
-        .produto h3 {
-            font-size: 19px;
-        }
-
-        .produto p {
-            font-size: 14px;
-        }
-
-    .secao {
-        padding: 0 15px;
-    }
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 55px;
+    height: 55px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 27px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
 }
 
-/* =========================
+    .whatsapp:hover {
+        transform: scale(1.08);
+    }
+
+
+/* =====================================================
    CARRINHO
-========================= */
+===================================================== */
 
 .carrinho-modal {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 100;
-    background: rgba(43, 23, 32, 0.55);
+    background: rgba(0, 0, 0, 0.75);
     align-items: flex-end;
     justify-content: center;
 }
@@ -436,16 +487,17 @@ body {
     max-width: 600px;
     max-height: 90vh;
     overflow-y: auto;
-    background: #fff5f8;
-    border-radius: 30px 30px 0 0;
+    background: #0e0e0e;
+    border: 1px solid #5c4720;
+    border-radius: 10px 10px 0 0;
     padding: 25px 20px 30px;
-    box-shadow: 0 -10px 40px rgba(143, 41, 72, 0.25);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7);
     position: relative;
 }
 
     .carrinho h2 {
         margin-top: 0;
-        color: #71243c;
+        color: #d9b65c;
         font-family: 'Playfair Display', serif;
         font-size: 28px;
     }
@@ -456,10 +508,10 @@ body {
     right: 20px;
     width: 38px;
     height: 38px;
-    border: none;
+    border: 1px solid #594720;
     border-radius: 50%;
-    background: #f4d4de;
-    color: #71243c;
+    background: #181818;
+    color: #d9b65c;
     font-size: 25px;
     cursor: pointer;
 }
@@ -468,27 +520,30 @@ body {
 /* PRODUTOS NO CARRINHO */
 
 .item-carrinho {
-    background: white;
-    border-radius: 18px;
+    background: #151515;
+    border: 1px solid #3e321d;
+    border-radius: 4px;
     padding: 15px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    border: 1px solid #f0d6df;
 }
 
     .item-carrinho h4 {
         margin: 0 0 5px;
-        color: #3b1b25;
+        color: #eee4d2;
     }
 
     .item-carrinho p {
         margin: 0;
-        color: #9a3152;
+        color: #d3ad54;
         font-weight: bold;
     }
+
+
+/* QUANTIDADE */
 
 .quantidade {
     display: flex;
@@ -499,10 +554,10 @@ body {
     .quantidade button {
         width: 32px;
         height: 32px;
-        border: none;
+        border: 1px solid #b88c32;
         border-radius: 50%;
-        background: #8f2948;
-        color: white;
+        background: #c69b3c;
+        color: #080808;
         font-size: 20px;
         cursor: pointer;
     }
@@ -511,6 +566,7 @@ body {
         font-weight: bold;
         min-width: 20px;
         text-align: center;
+        color: #f1e7d4;
     }
 
 
@@ -522,13 +578,15 @@ body {
     align-items: center;
     margin: 20px 0;
     padding: 18px;
-    background: #f9dce5;
-    border-radius: 18px;
-    color: #71243c;
-    font-size: 18px;
+    background: #18150f;
+    border: 1px solid #5b4720;
+    border-radius: 4px;
+    color: #d8bd76;
+    font-size: 17px;
 }
 
     .total-carrinho strong {
+        color: #e4c46d;
         font-size: 22px;
     }
 
@@ -536,27 +594,27 @@ body {
 /* PAGAMENTO */
 
 .pagamento {
-    background: white;
+    background: #151515;
     padding: 18px;
-    border-radius: 18px;
-    border: 1px solid #f0d6df;
+    border: 1px solid #3e321d;
+    border-radius: 4px;
 }
 
     .pagamento h3 {
         margin-top: 0;
-        color: #71243c;
+        color: #d9b65c;
     }
 
     .pagamento label {
         display: block;
         padding: 12px 5px;
-        color: #542735;
+        color: #c8c0b2;
         cursor: pointer;
     }
 
     .pagamento input {
         margin-right: 8px;
-        accent-color: #8f2948;
+        accent-color: #c69b3c;
     }
 
 
@@ -566,8 +624,9 @@ body {
     display: none;
     margin-top: 12px;
     padding: 18px;
-    background: white;
-    border-radius: 18px;
+    background: #151515;
+    border: 1px solid #3e321d;
+    border-radius: 4px;
 }
 
     .troco-area.visivel {
@@ -577,21 +636,23 @@ body {
     .troco-area label {
         display: block;
         margin-bottom: 8px;
-        color: #71243c;
+        color: #d9b65c;
         font-weight: bold;
     }
 
     .troco-area input {
         width: 100%;
         padding: 13px;
-        border: 1px solid #e8bdca;
-        border-radius: 12px;
+        border: 1px solid #594720;
+        border-radius: 3px;
         outline: none;
+        background: #0d0d0d;
+        color: #f0e5d0;
         font-size: 16px;
     }
 
 #valorTroco {
-    color: #299761;
+    color: #65b878;
     font-weight: bold;
 }
 
@@ -603,41 +664,74 @@ body {
     margin-top: 18px;
     padding: 16px;
     border: none;
-    border-radius: 16px;
-    background: #8f2948;
-    color: white;
-    font-size: 16px;
+    border-radius: 3px;
+    background: #c69b3c;
+    color: #080808;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(143, 41, 72, 0.25);
-}
-
-    .finalizar:hover {
-        background: #702038;
-    }
-
-
-/* WHATSAPP */
-
-.whatsapp {
-    position: fixed;
-    right: 20px;
-    bottom: 90px;
-    width: 58px;
-    height: 58px;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    font-size: 29px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     transition: 0.2s;
 }
 
-    .whatsapp:hover {
-        transform: scale(1.08);
+    .finalizar:hover {
+        background: #e0bf66;
     }
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .logo span {
+        font-size: 39px;
+    }
+
+    .logo small {
+        font-size: 14px;
+    }
+
+    .restaurante h1 {
+        font-size: 24px;
+    }
+
+    .secao {
+        padding: 0 12px;
+    }
+
+        .secao h2 {
+            font-size: 24px;
+        }
+
+    .produto {
+        grid-template-columns: 1fr 120px;
+        min-height: 125px;
+        padding: 13px;
+    }
+
+        .produto img {
+            width: 120px;
+            height: 105px;
+        }
+
+        .produto h3 {
+            font-size: 18px;
+        }
+
+        .produto p {
+            font-size: 12px;
+        }
+
+    .precos strong {
+        font-size: 18px;
+    }
+
+    .adicionar {
+        width: 36px;
+        height: 36px;
+        right: 10px;
+        bottom: 10px;
+    }
+}

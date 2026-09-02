@@ -307,3 +307,133 @@ function finalizarPedido() {
     window.open(url, "_blank");
 
 }
+// ===============================
+// PESQUISA DE PRODUTOS
+// ===============================
+
+const campoPesquisa = document.getElementById("campoPesquisa");
+
+// Cria mensagem de produto não encontrado
+const mensagemPesquisa = document.createElement("div");
+
+mensagemPesquisa.id = "mensagemPesquisa";
+mensagemPesquisa.textContent = "Nenhum produto encontrado 😕";
+
+mensagemPesquisa.style.display = "none";
+mensagemPesquisa.style.textAlign = "center";
+mensagemPesquisa.style.padding = "50px 20px";
+mensagemPesquisa.style.fontSize = "20px";
+mensagemPesquisa.style.fontWeight = "600";
+mensagemPesquisa.style.color = "#d4af37";
+
+// Coloca a mensagem antes das seções
+document.querySelector("main").prepend(mensagemPesquisa);
+
+
+campoPesquisa.addEventListener("input", function () {
+
+    const pesquisa = campoPesquisa.value
+        .toLowerCase()
+        .trim();
+
+    const secoes = document.querySelectorAll(".secao");
+
+    // Se o campo estiver vazio
+    if (pesquisa === "") {
+
+        secoes.forEach(function (secao) {
+            secao.style.display = "";
+        });
+
+        document.querySelectorAll(".produto").forEach(function (produto) {
+            produto.style.display = "";
+        });
+
+        mensagemPesquisa.style.display = "none";
+
+        return;
+    }
+
+
+    let encontrouProduto = false;
+    let primeiroProduto = null;
+
+
+    // Percorre cada seção
+    secoes.forEach(function (secao) {
+
+        const produtos = secao.querySelectorAll(".produto");
+
+        let encontrouNaSecao = false;
+
+
+        produtos.forEach(function (produto) {
+
+            const nomeElemento = produto.querySelector("h3");
+            const descricaoElemento = produto.querySelector("p");
+
+            const nome = nomeElemento
+                ? nomeElemento.textContent.toLowerCase()
+                : "";
+
+            const descricao = descricaoElemento
+                ? descricaoElemento.textContent.toLowerCase()
+                : "";
+
+
+            if (
+                nome.includes(pesquisa) ||
+                descricao.includes(pesquisa)
+            ) {
+
+                produto.style.display = "";
+
+                encontrouNaSecao = true;
+                encontrouProduto = true;
+
+                if (!primeiroProduto) {
+                    primeiroProduto = produto;
+                }
+
+            } else {
+
+                produto.style.display = "none";
+
+            }
+
+        });
+
+
+        // Se essa categoria não tiver nenhum resultado,
+        // esconde a categoria inteira
+        if (encontrouNaSecao) {
+            secao.style.display = "";
+        } else {
+            secao.style.display = "none";
+        }
+
+    });
+
+
+    // Se não encontrou nenhum produto
+    if (!encontrouProduto) {
+
+        mensagemPesquisa.style.display = "block";
+
+    } else {
+
+        mensagemPesquisa.style.display = "none";
+
+        // Vai automaticamente para o primeiro produto encontrado
+        setTimeout(function () {
+
+            primeiroProduto.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+});

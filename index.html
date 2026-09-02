@@ -7,28 +7,34 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title> SUSHI HOUSE</title>
+    <title>HOUSE DELIVERY - Sushi</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
     <header class="cabecalho">
 
         <div class="logo">
-            SUSHI HOUSE
+            <span>HOUSE</span>
+            <small>DELIVERY</small>
+            <b>SUSHI</b>
         </div>
 
         <div class="restaurante">
 
-            <h1>SUSHI HOUSE DELIVERY</h1>
+            <h1>HOUSE DELIVERY</h1>
 
             <p>
                 <span class="aberto">
                     ● Aberto até às 23h00
                 </span>
-                · 📍 PORCINCULA - RJ
+                · 📍 PORCIÚNCULA - RJ
             </p>
 
             <p>
@@ -53,6 +59,10 @@
     </header>
 
 
+    <!-- =========================
+         PESQUISA
+    ========================== -->
+
     <div class="pesquisa">
 
         <span>🔍</span>
@@ -61,122 +71,42 @@
                id="campoPesquisa"
                placeholder="Busque por um produto">
 
-        <button>☰</button>
+        <button onclick="mostrarMenu()">☰</button>
 
     </div>
 
 
+    <!-- =========================
+         CATEGORIAS
+    ========================== -->
+
     <nav class="categorias">
 
-        <a href="#destaques">Destaques</a>
-
-        <a href="#combos">Combos</a>
-
         <a href="#entradas">Entradas</a>
-
-        <a href="#niguiris">Niguiris</a>
-
         <a href="#sashimi">Sashimi</a>
-
+        <a href="#niguiri">Niguiri</a>
+        <a href="#makihot">Maki Hot</a>
+        <a href="#sobremesas">Sobremesas</a>
+        <a href="#uramaki">Uramaki</a>
+        <a href="#makimono">Makimono</a>
+        <a href="#salmaoice">Salmão Ice</a>
+        <a href="#joys">Joys</a>
         <a href="#temaki">Temaki</a>
-
-        <a href="#bebidas">Bebidas</a>
+        <a href="#temakihot">Temaki Hot</a>
 
     </nav>
 
 
     <main>
 
-        <section id="destaques" class="secao">
 
-            <h2>Destaques</h2>
-
-            <div class="produtos">
-
-                <article class="produto">
-
-                    <div class="produto-info">
-
-                        <span class="destaque">
-                            ⭐ DESTAQUE
-                        </span>
-
-                        <h3>Dupla Sushi no Copo</h3>
-
-                        <p>
-                            Mais de 300g. Uma refeição rápida,
-                            prática e saborosa.
-                        </p>
-
-                        <div class="precos">
-
-                            <strong>R$ 65,90</strong>
-
-                            <span class="preco-antigo">
-                                R$ 69,90
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="foto-produto">
-                        <img src="imagens/dupla.PNG" alt="Dupla Sushi no Copo">
-                    </div>
-
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Dupla Sushi no Copo', 65.90)">
-                        +
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <section id="combos" class="secao">
-
-            <h2>Combos</h2>
-
-            <div class="produtos">
-
-                <article class="produto">
-
-                    <div class="produto-info">
-
-                        <h3>Combo House 1</h3>
-
-                        <p>
-                            20 peças com sashimi, niguiri,
-                            uramaki e hossomaki.
-                        </p>
-
-                        <div class="precos">
-                            <strong>R$ 65,90</strong>
-                        </div>
-
-                    </div>
-                    <div class="foto-produto">
-                        <img src="imagens/combo.PNG" alt="Combo House">
-                    </div>
-
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Combo House 1', 65.90)">
-                        +
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
+        <!-- =========================
+             ENTRADAS
+        ========================== -->
 
         <section id="entradas" class="secao">
 
-            <h2>Entradas</h2>
+            <h2>ENTRADAS</h2>
 
             <div class="produtos">
 
@@ -184,26 +114,187 @@
 
                     <div class="produto-info">
 
-                        <h3>Batata Frita</h3>
+                        <h3>Tempurá de Camarão</h3>
 
                         <p>
-                            Porção crocante com aproximadamente 300g.
+                            10 camarões - aproximadamente 250g.
                         </p>
 
                         <div class="precos">
-                            <strong>R$ 24,90</strong>
+                            <strong>R$ 49,90</strong>
                         </div>
 
                     </div>
 
-                    <div class="foto-produto">
-                        <img src="imagens/batata.PNG" alt="Batata Frita">
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Camarão Imperial</h3>
+
+                        <p>
+                            Preparação especial com camarões.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 49,00</strong>
+                        </div>
+
                     </div>
 
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Batata Frita', 24.90)">
-                        +
-                    </button>
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Ceviche Salmão</h3>
+
+                        <p>
+                            200g de ceviche de salmão.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 46,00</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Ceviche Tilápia</h3>
+
+                        <p>
+                            Ceviche preparado com tilápia.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 39,00</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Sunomono Salmão + Kani</h3>
+
+                        <p>
+                            50g.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 25,00</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Sunomono Kani</h3>
+
+                        <p>
+                            Preparação tradicional japonesa.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 18,00</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Big Hot 80g Salmão</h3>
+
+                        <div class="precos">
+                            <strong>R$ 39,90</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Big Hot Misto</h3>
+
+                        <p>
+                            Salmão + camarão.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 39,90</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Poke Salmão</h3>
+
+                        <p>
+                            150g arroz, 100g salmão, 100g pepino,
+                            50g cream cheese, 50g kani e 50g crispy.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 49,90</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Poke Salmão + Camarão</h3>
+
+                        <p>
+                            80g salmão, 80g camarão, 150g arroz,
+                            50g cream cheese, cebola roxa,
+                            milho e tomatinho.
+                        </p>
+
+                        <div class="precos">
+                            <strong>R$ 59,90</strong>
+                        </div>
+
+                    </div>
 
                 </article>
 
@@ -212,48 +303,13 @@
         </section>
 
 
-        <section id="niguiris" class="secao">
-
-            <h2>Niguiris</h2>
-
-            <div class="produtos">
-
-                <article class="produto">
-
-                    <div class="produto-info">
-
-                        <h3>Niguiri Salmão</h3>
-
-                        <p>
-                            Dupla de niguiris preparados
-                            com salmão fresco.
-                        </p>
-
-                        <div class="precos">
-                            <strong>R$ 18,90</strong>
-                        </div>
-
-                    </div>
-
-                    <div class="foto-produto">
-                        <img src="imagens/niguiri.PNG" alt="Niguiri Salmão">
-                    </div>
-
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Niguiri Salmão', 18.90)">
-                        +
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
+        <!-- =========================
+             SASHIMI
+        ========================== -->
 
         <section id="sashimi" class="secao">
 
-            <h2>Sashimi</h2>
+            <h2>SASHIMI</h2>
 
             <div class="produtos">
 
@@ -261,26 +317,61 @@
 
                     <div class="produto-info">
 
-                        <h3>Sashimi Salmão</h3>
-
-                        <p>
-                            Fatias selecionadas de salmão fresco.
-                        </p>
+                        <h3>Salmão 20g</h3>
 
                         <div class="precos">
-                            <strong>R$ 29,90</strong>
+                            <strong>R$ 5,00</strong>
                         </div>
 
                     </div>
 
-                    <div class="foto-produto">
-                        <img src="imagens/sushimi.PNG" alt="Sashimi Salmão">
+                    <img src="imagens/sashimi.PNG"
+                         alt="Salmão">
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Peixe Branco 20g</h3>
+
+                        <div class="precos">
+                            <strong>R$ 4,50</strong>
+                        </div>
+
                     </div>
 
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Sashimi Salmão', 29.90)">
-                        +
-                    </button>
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Tropical (Maracujá)</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,00</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+
+                        <h3>Toast</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,00</strong>
+                        </div>
+
+                    </div>
 
                 </article>
 
@@ -288,38 +379,528 @@
 
         </section>
 
+
+        <!-- =========================
+             NIGUIRI
+        ========================== -->
+
+        <section id="niguiri" class="secao">
+
+            <h2>NIGUIRI</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Salmão</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,50</strong>
+                        </div>
+                    </div>
+
+                    <img src="imagens/niguiri.PNG"
+                         alt="Niguiri Salmão">
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Peixe Branco</h3>
+
+                        <div class="precos">
+                            <strong>R$ 3,90</strong>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Spice Pimenta</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,50</strong>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Toast</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,50</strong>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Camarão</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,50</strong>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="produto">
+
+                    <div class="produto-info">
+                        <h3>Tropical</h3>
+
+                        <div class="precos">
+                            <strong>R$ 5,50</strong>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAKI HOT
+        ========================== -->
+
+        <section id="makihot" class="secao">
+
+            <h2>MAKI HOT</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Filadélfia</h3>
+                        <div class="precos">
+                            <strong>R$ 3,30</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Tartar</h3>
+                        <div class="precos">
+                            <strong>R$ 3,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Camarão 100g</h3>
+                        <div class="precos">
+                            <strong>R$ 3,30</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Skin</h3>
+                        <div class="precos">
+                            <strong>R$ 2,70</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Pimenta</h3>
+                        <p>Com geleia de pimenta.</p>
+                        <div class="precos">
+                            <strong>R$ 3,40</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Banana com Nutela</h3>
+                        <div class="precos">
+                            <strong>R$ 2,90</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Hot Romeu e Julieta</h3>
+                        <div class="precos">
+                            <strong>R$ 2,60</strong>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOBREMESAS
+        ========================== -->
+
+        <section id="sobremesas" class="secao">
+
+            <h2>SOBREMESAS</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Rolinho Primavera 50g</h3>
+                        <div class="precos">
+                            <strong>R$ 17,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Salmão 50g</h3>
+                        <div class="precos">
+                            <strong>R$ 17,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Camarão</h3>
+                        <div class="precos">
+                            <strong>R$ 15,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Nutella com Morango</h3>
+                        <div class="precos">
+                            <strong>R$ 15,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Doce de Leite</h3>
+                        <div class="precos">
+                            <strong>R$ 15,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Romeu e Julieta</h3>
+                        <div class="precos">
+                            <strong>R$ 15,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             URAMAKI
+        ========================== -->
+
+        <section id="uramaki" class="secao">
+
+            <h2>URAMAKI</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Uramaki Filadélfia 10 peças</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Uramaki Salmão</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Uramaki Camarão</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Uramaki Tartar</h3>
+                        <div class="precos">
+                            <strong>R$ 3,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Uramaki Skin</h3>
+                        <div class="precos">
+                            <strong>R$ 2,50</strong>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAKIMONO
+        ========================== -->
+
+        <section id="makimono" class="secao">
+
+            <h2>MAKIMONO 10 PEÇAS</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Maki Filadélfia</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Maki Salmão</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Maki Camarão</h3>
+                        <div class="precos">
+                            <strong>R$ 2,80</strong>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Maki Skin</h3>
+                        <div class="precos">
+                            <strong>R$ 2,50</strong>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SALMÃO ICE
+        ========================== -->
+
+        <section id="salmaoice" class="secao">
+
+            <h2>SALMÃO ICE</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Amora</h3>
+                        <div class="precos"><strong>R$ 6,50</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Tartar</h3>
+                        <div class="precos"><strong>R$ 7,00</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Tartar Camarão</h3>
+                        <div class="precos"><strong>R$ 7,00</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Premium</h3>
+                        <p>Alho poró.</p>
+                        <div class="precos"><strong>R$ 6,50</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Tropical</h3>
+                        <div class="precos"><strong>R$ 6,50</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Pimenta</h3>
+                        <div class="precos"><strong>R$ 6,50</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Flambado Tartar</h3>
+                        <div class="precos"><strong>R$ 6,50</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Ice Especial Salmão com Camarão Empanado</h3>
+                        <div class="precos"><strong>R$ 7,90</strong></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             JOYS
+        ========================== -->
+
+        <section id="joys" class="secao">
+
+            <h2>JOYS ESPECIAIS</h2>
+
+            <div class="produtos">
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Joy com Geleia de Amora</h3>
+                        <div class="precos"><strong>R$ 4,70</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Joy com Geleia de Pimenta</h3>
+                        <div class="precos"><strong>R$ 4,70</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Joy de Tartar</h3>
+                        <div class="precos"><strong>R$ 4,80</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Joy com Geleia de Pimenta e Cebola Crisp</h3>
+                        <div class="precos"><strong>R$ 4,70</strong></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TEMAKI
+        ========================== -->
 
         <section id="temaki" class="secao">
 
-            <h2>Temaki</h2>
+            <h2>TEMAKI</h2>
 
             <div class="produtos">
 
                 <article class="produto">
-
                     <div class="produto-info">
-
-                        <h3>Temaki Salmão</h3>
-
-                        <p>
-                            Temaki de salmão com cream cheese.
-                        </p>
-
-                        <div class="precos">
-                            <strong>R$ 29,90</strong>
-                        </div>
-
+                        <h3>Filadélfia</h3>
+                        <div class="precos"><strong>R$ 39,90</strong></div>
                     </div>
 
-                    <div class="foto-produto">
-                        <img src="imagens/temaki.PNG" alt="Temaki Salmão">
+                    <img src="imagens/temaki.PNG"
+                         alt="Temaki Filadélfia">
+                </article>
+
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Salmão</h3>
+                        <div class="precos"><strong>R$ 39,90</strong></div>
                     </div>
+                </article>
 
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Temaki Salmão', 29.90)">
-                        +
-                    </button>
 
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Camarão Filadélfia</h3>
+                        <div class="precos"><strong>R$ 39,90</strong></div>
+                    </div>
                 </article>
 
             </div>
@@ -327,37 +908,65 @@
         </section>
 
 
-        <section id="bebidas" class="secao">
+        <!-- =========================
+             TEMAKI HOT
+        ========================== -->
 
-            <h2>Bebidas</h2>
+        <section id="temakihot" class="secao">
+
+            <h2>TEMAKI HOT</h2>
 
             <div class="produtos">
 
                 <article class="produto">
-
                     <div class="produto-info">
-
-                        <h3>Coca-Cola Lata</h3>
-
-                        <p>
-                            Coca-Cola 350ml.
-                        </p>
-
-                        <div class="precos">
-                            <strong>R$ 7,00</strong>
-                        </div>
-
+                        <h3>Hot Fila</h3>
+                        <div class="precos"><strong>R$ 39,90</strong></div>
                     </div>
+                </article>
 
-                    <div class="foto-produto">
-                        <img src="./imagens/coca.PNG" alt="Coca-Cola Lata">
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Camarão</h3>
+                        <div class="precos"><strong>R$ 39,90</strong></div>
                     </div>
+                </article>
 
-                    <button class="adicionar"
-                            onclick="adicionarProduto('Coca-Cola Lata', 7.00)">
-                        +
-                    </button>
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Misto</h3>
+                        <div class="precos"><strong>R$ 43,00</strong></div>
+                    </div>
+                </article>
 
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Mini Temaki Salmão</h3>
+                        <p>Unid. sem fritar.</p>
+                        <div class="precos"><strong>R$ 12,70</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Mini Temaki Fila</h3>
+                        <div class="precos"><strong>R$ 9,90</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Mini Temaki Camarão</h3>
+                        <div class="precos"><strong>R$ 10,80</strong></div>
+                    </div>
+                </article>
+
+                <article class="produto">
+                    <div class="produto-info">
+                        <h3>Temaki Aberto</h3>
+                        <p>Cream cheese em cima.</p>
+                        <div class="precos"><strong>R$ 43,00</strong></div>
+                    </div>
                 </article>
 
             </div>
@@ -366,6 +975,10 @@
 
     </main>
 
+
+    <!-- =========================
+         MENU INFERIOR
+    ========================== -->
 
     <footer class="menu-inferior">
 
@@ -387,15 +1000,20 @@
     </footer>
 
 
-    <!-- BOTÃO WHATSAPP -->
-    <a href="https://wa.me/5522998953298"
+    <!-- WHATSAPP -->
+
+    <a href="https://wa.me/5522998168216"
        class="whatsapp"
        target="_blank"
        aria-label="Falar com o restaurante">
         💬
     </a>
 
-    <!-- CARRINHO -->
+
+    <!-- =========================
+         CARRINHO
+    ========================== -->
+
     <div id="carrinhoModal" class="carrinho-modal">
 
         <div class="carrinho">
@@ -410,11 +1028,15 @@
             <div id="itensCarrinho"></div>
 
             <div class="total-carrinho">
-                Total:
+
+                <span>Total:</span>
+
                 <strong id="totalCarrinho">
                     R$ 0,00
                 </strong>
+
             </div>
+
 
             <div class="pagamento">
 
@@ -446,6 +1068,7 @@
 
             </div>
 
+
             <div id="trocoArea"
                  class="troco-area">
 
@@ -463,6 +1086,7 @@
 
             </div>
 
+
             <button class="finalizar"
                     onclick="finalizarPedido()">
 
@@ -473,6 +1097,7 @@
         </div>
 
     </div>
+
 
     <script src="script.js"></script>
 
