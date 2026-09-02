@@ -255,7 +255,7 @@ function finalizarPedido() {
         );
 
     let mensagem =
-        "🍣 *NOVO PEDIDO - SUSHI HOUSE DELIVERY*%0A%0A";
+        "🍣 *NOVO PEDIDO - HARU CAIÇARA*%0A%0A";
 
     carrinho.forEach(produto => {
 
@@ -299,7 +299,7 @@ function finalizarPedido() {
     }
 
     const numero =
-        "22998953298";
+        "5522998953298";
 
     const url =
         `https://wa.me/${numero}?text=${mensagem}`;
