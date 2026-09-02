@@ -255,7 +255,7 @@ function finalizarPedido() {
         );
 
     let mensagem =
-        "🍣 *NOVO PEDIDO - HARU CAIÇARA*%0A%0A";
+        "🍣 *NOVO PEDIDO - SUSHI HOUSE DELIVERY*%0A%0A";
 
     carrinho.forEach(produto => {
 
