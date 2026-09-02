@@ -412,3 +412,232 @@ body {
         padding: 0 15px;
     }
 }
+
+/* =========================
+   CARRINHO
+========================= */
+
+.carrinho-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(43, 23, 32, 0.55);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+    .carrinho-modal.aberto {
+        display: flex;
+    }
+
+.carrinho {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff5f8;
+    border-radius: 30px 30px 0 0;
+    padding: 25px 20px 30px;
+    box-shadow: 0 -10px 40px rgba(143, 41, 72, 0.25);
+    position: relative;
+}
+
+    .carrinho h2 {
+        margin-top: 0;
+        color: #71243c;
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+    }
+
+.fechar-carrinho {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f4d4de;
+    color: #71243c;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* PRODUTOS NO CARRINHO */
+
+.item-carrinho {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #f0d6df;
+}
+
+    .item-carrinho h4 {
+        margin: 0 0 5px;
+        color: #3b1b25;
+    }
+
+    .item-carrinho p {
+        margin: 0;
+        color: #9a3152;
+        font-weight: bold;
+    }
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .quantidade button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        background: #8f2948;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .quantidade span {
+        font-weight: bold;
+        min-width: 20px;
+        text-align: center;
+    }
+
+
+/* TOTAL */
+
+.total-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 18px;
+    background: #f9dce5;
+    border-radius: 18px;
+    color: #71243c;
+    font-size: 18px;
+}
+
+    .total-carrinho strong {
+        font-size: 22px;
+    }
+
+
+/* PAGAMENTO */
+
+.pagamento {
+    background: white;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid #f0d6df;
+}
+
+    .pagamento h3 {
+        margin-top: 0;
+        color: #71243c;
+    }
+
+    .pagamento label {
+        display: block;
+        padding: 12px 5px;
+        color: #542735;
+        cursor: pointer;
+    }
+
+    .pagamento input {
+        margin-right: 8px;
+        accent-color: #8f2948;
+    }
+
+
+/* TROCO */
+
+.troco-area {
+    display: none;
+    margin-top: 12px;
+    padding: 18px;
+    background: white;
+    border-radius: 18px;
+}
+
+    .troco-area.visivel {
+        display: block;
+    }
+
+    .troco-area label {
+        display: block;
+        margin-bottom: 8px;
+        color: #71243c;
+        font-weight: bold;
+    }
+
+    .troco-area input {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #e8bdca;
+        border-radius: 12px;
+        outline: none;
+        font-size: 16px;
+    }
+
+#valorTroco {
+    color: #299761;
+    font-weight: bold;
+}
+
+
+/* FINALIZAR */
+
+.finalizar {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background: #8f2948;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(143, 41, 72, 0.25);
+}
+
+    .finalizar:hover {
+        background: #702038;
+    }
+
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 58px;
+    height: 58px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 29px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+}
+
+    .whatsapp:hover {
+        transform: scale(1.08);
+    }
