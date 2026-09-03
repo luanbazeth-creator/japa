@@ -736,184 +736,263 @@ body {
     }
 }
 
-.contador-produto {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 28px;
-    height: 28px;
-    margin-top: 10px;
-    margin-left: 8px;
-    padding: 0 8px;
-    background: #d4af37;
-    color: #111;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+/* ========================================
+   MONTE SEU POKE
+   MESMO ESTILO DOS PRODUTOS
+======================================== */
+
+#poke {
+    background: transparent;
+    color: white;
 }
 
-/* =========================
-   MONTE SEU POKE
-========================= */
+
+    /* TÍTULO PRINCIPAL */
+
+    #poke > h2 {
+        color: #fff200;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #d6b400;
+        padding-bottom: 10px;
+    }
+
+
+        /* LINHA DOURADA ABAIXO DO TÍTULO */
+
+        #poke > h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: #fff200;
+            margin-top: 8px;
+        }
+
+
+/* CONTAINER */
 
 .montar-poke {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
+
+
+/* ========================================
+   CADA GRUPO
+======================================== */
 
 .poke-grupo {
-    background: #fff;
-    border: 1px solid #f3dce2;
-    border-radius: 22px;
-    padding: 18px;
-    box-shadow: 0 4px 15px rgba(143, 41, 72, 0.07);
+    background: #151515;
+    border: 2px solid #b99a32;
+    border-radius: 5px;
+    padding: 22px;
+    box-shadow: none;
 }
 
+
+/* ========================================
+   TÍTULO DO GRUPO
+======================================== */
+
 .poke-titulo {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
     .poke-titulo h3 {
-        margin: 0 0 3px;
-        color: #71243c;
-        font-family: 'Playfair Display', serif;
-        font-size: 20px;
+        margin: 0;
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 21px;
+        font-weight: bold;
     }
 
     .poke-titulo small {
-        color: #98727e;
-        font-size: 13px;
+        display: block;
+        margin-top: 6px;
+        color: #dddddd;
+        font-size: 14px;
     }
 
 
-/* OPÇÕES */
+/* ========================================
+   OPÇÕES
+======================================== */
 
 .poke-opcao {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px 12px;
-    margin-top: 8px;
-    border: 1px solid #f0d6df;
-    border-radius: 14px;
-    background: #fffafa;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-top: 9px;
+    background: #151515;
+    border: 1px solid #5e522d;
+    border-radius: 4px;
     cursor: pointer;
     transition: 0.2s;
 }
 
+
+    /* PASSAR O MOUSE */
+
     .poke-opcao:hover {
-        background: #fdf0f4;
-        border-color: #e9a3b8;
-    }
-
-    .poke-opcao:has(input:checked) {
-        background: #f9dce5;
-        border-color: #8f2948;
+        border-color: #d6b400;
+        background: #1a222a;
     }
 
 
-    /* RADIO / CHECKBOX */
-
-    .poke-opcao input {
-        width: 19px;
-        height: 19px;
-        accent-color: #8f2948;
-        flex-shrink: 0;
-    }
-
-
-    /* TEXTO */
+    /* ========================================
+   TEXTO DAS OPÇÕES
+======================================== */
 
     .poke-opcao span {
-        flex: 1;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
+        flex-direction: column;
+        margin-left: 12px;
+        gap: 4px;
     }
 
     .poke-opcao strong {
-        color: #3b1b25;
-        font-size: 15px;
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 16px;
     }
 
     .poke-opcao small {
-        color: #9a3152;
-        font-weight: 700;
-        white-space: nowrap;
+        color: #fff200;
+        font-size: 14px;
+        font-weight: bold;
     }
 
 
-/* =========================
-   RESUMO
-========================= */
+    /* ========================================
+   RADIO / CHECKBOX
+======================================== */
+
+    .poke-opcao input {
+        width: 18px;
+        height: 18px;
+        accent-color: #fff200;
+        cursor: pointer;
+    }
+
+
+    /* ========================================
+   OPÇÃO SELECIONADA
+======================================== */
+
+    .poke-opcao:has(input:checked) {
+        background: #1c2024;
+        border: 2px solid #fff200;
+    }
+
+
+/* ========================================
+   RESUMO DO POKE
+======================================== */
 
 .poke-resumo {
-    padding: 20px;
-    background: #f9dce5;
-    border: 1px solid #efc5d1;
-    border-radius: 22px;
-    color: #542735;
+    background: #151515;
+    border: 2px solid #b99a32;
+    border-radius: 5px;
+    padding: 22px;
+    color: white;
 }
 
     .poke-resumo h3 {
-        margin: 0 0 12px;
-        color: #71243c;
-        font-family: 'Playfair Display', serif;
-        font-size: 21px;
+        margin-top: 0;
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
     }
 
+
+/* RESUMO DOS INGREDIENTES */
+
 #resumoPoke {
-    line-height: 1.6;
-    color: #80636c;
-    font-size: 14px;
+    color: #eeeeee;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 30px;
 }
+
+
+/* ========================================
+   TOTAL
+======================================== */
 
 .poke-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #e9b8c7;
+    border-top: 1px solid #8c7427;
 }
 
     .poke-total span {
-        color: #71243c;
-        font-weight: 600;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: bold;
     }
 
     .poke-total strong {
-        color: #8f2948;
+        color: #fff200;
         font-size: 24px;
+        font-weight: bold;
     }
 
 
-/* =========================
-   BOTÃO
-========================= */
+/* ========================================
+   BOTÃO ADICIONAR AO CARRINHO
+======================================== */
 
 .botao-poke {
     width: 100%;
     padding: 17px;
-    border: none;
-    border-radius: 17px;
-    background: #8f2948;
-    color: white;
+    background: #151c23;
+    color: #ffffff;
+    border: 2px solid #d6b400;
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(143, 41, 72, 0.25);
     transition: 0.2s;
 }
 
     .botao-poke:hover {
-        background: #702038;
-        transform: translateY(-2px);
+        background: #252c32;
+        color: #fff200;
     }
 
     .botao-poke:active {
         transform: scale(0.98);
     }
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    #poke > h2 {
+        font-size: 26px;
+    }
+
+    .poke-grupo {
+        padding: 17px;
+    }
+
+    .poke-titulo h3 {
+        font-size: 18px;
+    }
+
+    .poke-opcao {
+        padding: 13px;
+    }
+}

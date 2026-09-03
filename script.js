@@ -31,33 +31,6 @@ function adicionarProduto(nome, preco) {
 
 }
 
-function adicionarProduto(nome, preco) {
-
-    const produto = carrinho.find(
-        item => item.nome === nome
-    );
-
-    if (produto) {
-
-        produto.quantidade++;
-
-    } else {
-
-        carrinho.push({
-            nome: nome,
-            preco: preco,
-            quantidade: 1
-        });
-
-    }
-
-    atualizarCarrinho();
-
-    // Atualiza o número mostrado no produto
-    atualizarContadorProduto(nome);
-
-}
-
 
 /* =========================
    ATUALIZAR CARRINHO
@@ -117,7 +90,6 @@ function atualizarCarrinho() {
                 </button>
 
             </div>
-
         `;
 
         container.appendChild(item);
@@ -127,64 +99,8 @@ function atualizarCarrinho() {
     totalElemento.textContent =
         "R$ " + total.toFixed(2).replace(".", ",");
 
-
-    // ==================================
-    // ATUALIZA OS NÚMEROS NOS PRODUTOS
-    // ==================================
-
-    document.querySelectorAll(".produto").forEach(card => {
-
-        const titulo = card.querySelector("h3");
-
-        if (!titulo)
-            return;
-
-        const nomeCard =
-            titulo.textContent.trim();
-
-        const produtoCarrinho =
-            carrinho.find(item =>
-                item.nome === nomeCard
-            );
-
-        let contador =
-            card.querySelector(".contador-produto");
-
-
-        // Se o produto está no carrinho
-        if (produtoCarrinho) {
-
-            if (!contador) {
-
-                contador =
-                    document.createElement("span");
-
-                contador.className =
-                    "contador-produto";
-
-                card.appendChild(contador);
-
-            }
-
-            contador.textContent =
-                produtoCarrinho.quantidade;
-
-        }
-
-        // Se não está mais no carrinho
-        else {
-
-            if (contador) {
-
-                contador.remove();
-
-            }
-
-        }
-
-    });
-
 }
+
 
 /* =========================
    ALTERAR QUANTIDADE
@@ -339,7 +255,7 @@ function finalizarPedido() {
         );
 
     let mensagem =
-        "🍣 *NOVO PEDIDO - SUSHI HOUSE DELIVERY*%0A%0A";
+        "🍣 *NOVO PEDIDO - HARU CAIÇARA*%0A%0A";
 
     carrinho.forEach(produto => {
 
@@ -383,7 +299,7 @@ function finalizarPedido() {
     }
 
     const numero =
-        "5522998953298";
+        "5522998168216";
 
     const url =
         `https://wa.me/${numero}?text=${mensagem}`;
@@ -397,359 +313,37 @@ function finalizarPedido() {
 
 const campoPesquisa = document.getElementById("campoPesquisa");
 
-// Cria mensagem de produto não encontrado
-const mensagemPesquisa = document.createElement("div");
-
-mensagemPesquisa.id = "mensagemPesquisa";
-mensagemPesquisa.textContent = "Nenhum produto encontrado 😕";
-
-mensagemPesquisa.style.display = "none";
-mensagemPesquisa.style.textAlign = "center";
-mensagemPesquisa.style.padding = "50px 20px";
-mensagemPesquisa.style.fontSize = "20px";
-mensagemPesquisa.style.fontWeight = "600";
-mensagemPesquisa.style.color = "#d4af37";
-
-// Coloca a mensagem antes das seções
-document.querySelector("main").prepend(mensagemPesquisa);
-
-
 campoPesquisa.addEventListener("input", function () {
 
     const pesquisa = campoPesquisa.value
         .toLowerCase()
         .trim();
 
-    const secoes = document.querySelectorAll(".secao");
+    const produtos = document.querySelectorAll(".produto");
 
-    // Se o campo estiver vazio
-    if (pesquisa === "") {
+    produtos.forEach(function (produto) {
 
-        secoes.forEach(function (secao) {
-            secao.style.display = "";
-        });
+        const nome = produto
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
 
-        document.querySelectorAll(".produto").forEach(function (produto) {
+        const descricao = produto
+            .querySelector("p");
+
+        const textoDescricao = descricao
+            ? descricao.textContent.toLowerCase()
+            : "";
+
+        if (
+            nome.includes(pesquisa) ||
+            textoDescricao.includes(pesquisa)
+        ) {
             produto.style.display = "";
-        });
-
-        mensagemPesquisa.style.display = "none";
-
-        return;
-    }
-
-
-    let encontrouProduto = false;
-    let primeiroProduto = null;
-
-
-    // Percorre cada seção
-    secoes.forEach(function (secao) {
-
-        const produtos = secao.querySelectorAll(".produto");
-
-        let encontrouNaSecao = false;
-
-
-        produtos.forEach(function (produto) {
-
-            const nomeElemento = produto.querySelector("h3");
-            const descricaoElemento = produto.querySelector("p");
-
-            const nome = nomeElemento
-                ? nomeElemento.textContent.toLowerCase()
-                : "";
-
-            const descricao = descricaoElemento
-                ? descricaoElemento.textContent.toLowerCase()
-                : "";
-
-
-            if (
-                nome.includes(pesquisa) ||
-                descricao.includes(pesquisa)
-            ) {
-
-                produto.style.display = "";
-
-                encontrouNaSecao = true;
-                encontrouProduto = true;
-
-                if (!primeiroProduto) {
-                    primeiroProduto = produto;
-                }
-
-            } else {
-
-                produto.style.display = "none";
-
-            }
-
-        });
-
-
-        // Se essa categoria não tiver nenhum resultado,
-        // esconde a categoria inteira
-        if (encontrouNaSecao) {
-            secao.style.display = "";
         } else {
-            secao.style.display = "none";
+            produto.style.display = "none";
         }
 
     });
-
-
-    // Se não encontrou nenhum produto
-    if (!encontrouProduto) {
-
-        mensagemPesquisa.style.display = "block";
-
-    } else {
-
-        mensagemPesquisa.style.display = "none";
-
-        // Vai automaticamente para o primeiro produto encontrado
-        setTimeout(function () {
-
-            primeiroProduto.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }, 100);
-
-    }
 
 });
-
-/* =========================
-   MONTE SEU POKE
-========================= */
-
-function calcularPoke() {
-
-    let total = 0;
-    let ingredientes = [];
-
-
-    // Todas as opções selecionadas
-
-    document.querySelectorAll(
-        '.montar-poke input:checked'
-    ).forEach(item => {
-
-        total += parseFloat(item.dataset.preco);
-
-        ingredientes.push(item.value);
-
-    });
-
-
-    // Atualiza preço
-
-    const preco =
-        document.getElementById("precoPoke");
-
-    if (preco) {
-
-        preco.textContent =
-            "R$ " +
-            total.toFixed(2).replace(".", ",");
-
-    }
-
-
-    // Atualiza resumo
-
-    const resumo =
-        document.getElementById("resumoPoke");
-
-    if (resumo) {
-
-        if (ingredientes.length > 0) {
-
-            resumo.textContent =
-                ingredientes.join(" • ");
-
-        } else {
-
-            resumo.textContent =
-                "Escolha os ingredientes acima.";
-
-        }
-
-    }
-
-}
-
-
-/* =========================
-   LIMITAR COMPLEMENTOS
-========================= */
-
-document.addEventListener("change", function (event) {
-
-    if (
-        event.target.matches(
-            'input[name="complementoPoke"]'
-        )
-    ) {
-
-        const selecionados =
-            document.querySelectorAll(
-                'input[name="complementoPoke"]:checked'
-            );
-
-        if (selecionados.length > 3) {
-
-            event.target.checked = false;
-
-            alert(
-                "Você pode escolher no máximo 3 complementos."
-            );
-
-            return;
-
-        }
-
-    }
-
-
-    // Atualiza o preço
-
-    if (
-        event.target.closest(".montar-poke")
-    ) {
-
-        calcularPoke();
-
-    }
-
-});
-
-
-/* =========================
-   ADICIONAR POKE
-========================= */
-
-function adicionarPoke() {
-
-    const base =
-        document.querySelector(
-            'input[name="basePoke"]:checked'
-        );
-
-    const proteina =
-        document.querySelector(
-            'input[name="proteinaPoke"]:checked'
-        );
-
-    const molho =
-        document.querySelector(
-            'input[name="molhoPoke"]:checked'
-        );
-
-
-    // Verifica base
-
-    if (!base) {
-
-        alert("🥗 Escolha uma base para o seu Poke.");
-
-        return;
-
-    }
-
-
-    // Verifica proteína
-
-    if (!proteina) {
-
-        alert("🍣 Escolha uma proteína para o seu Poke.");
-
-        return;
-
-    }
-
-
-    // Verifica molho
-
-    if (!molho) {
-
-        alert("🥣 Escolha um molho para o seu Poke.");
-
-        return;
-
-    }
-
-
-    let ingredientes = [];
-    let total = 0;
-
-
-    // Pega tudo que foi selecionado
-
-    document.querySelectorAll(
-        '.montar-poke input:checked'
-    ).forEach(item => {
-
-        ingredientes.push(item.value);
-
-        total +=
-            parseFloat(item.dataset.preco);
-
-    });
-
-
-    // Nome do produto
-
-    const nome =
-        "Poke Personalizado";
-
-
-    // Adiciona ao carrinho
-
-    adicionarProduto(
-        nome,
-        total
-    );
-
-
-    // Guarda os ingredientes
-    // para mostrar no carrinho
-
-    const produto =
-        carrinho.find(
-            item => item.nome === nome
-        );
-
-    if (produto) {
-
-        produto.detalhes =
-            ingredientes.join(", ");
-
-    }
-
-
-    atualizarCarrinho();
-
-
-    alert(
-        "🍣 Poke personalizado adicionado ao carrinho!"
-    );
-
-
-    // Limpa as escolhas
-
-    document.querySelectorAll(
-        '.montar-poke input'
-    ).forEach(input => {
-
-        input.checked = false;
-
-    });
-
-
-    calcularPoke();
-
-}
