@@ -521,3 +521,155 @@ campoPesquisa.addEventListener("input", function () {
     }
 
 });
+
+/* =========================
+   MONTAR POKÉ
+========================= */
+
+function calcularPoke() {
+
+    let total = 0;
+    let ingredientes = [];
+
+
+    // RADIO BUTTONS
+
+    document.querySelectorAll(
+        'input[name="basePoke"]:checked, ' +
+        'input[name="proteinaPoke"]:checked, ' +
+        'input[name="molhoPoke"]:checked'
+    ).forEach(item => {
+
+        total += parseFloat(item.dataset.preco);
+
+        ingredientes.push(item.value);
+
+    });
+
+
+    // COMPLEMENTOS
+
+    document.querySelectorAll(
+        '.poke-grupo input[type="checkbox"]:checked'
+    ).forEach(item => {
+
+        total += parseFloat(item.dataset.preco);
+
+        ingredientes.push(item.value);
+
+    });
+
+
+    // PREÇO
+
+    document.getElementById("precoPoke").textContent =
+        "R$ " + total.toFixed(2).replace(".", ",");
+
+
+    // RESUMO
+
+    if (ingredientes.length > 0) {
+
+        document.getElementById("resumoPoke").textContent =
+            ingredientes.join(" • ");
+
+    } else {
+
+        document.getElementById("resumoPoke").textContent =
+            "Escolha os ingredientes acima.";
+
+    }
+
+}
+
+
+// Atualiza o preço sempre que clicar em alguma opção
+
+document.addEventListener("change", function (event) {
+
+    if (
+        event.target.closest(".montar-poke")
+    ) {
+
+        calcularPoke();
+
+    }
+
+});
+
+
+/* =========================
+   ADICIONAR POKÉ AO CARRINHO
+========================= */
+
+function adicionarPoke() {
+
+    let total = 0;
+    let ingredientes = [];
+
+
+    document.querySelectorAll(
+        '.montar-poke input:checked'
+    ).forEach(item => {
+
+        total += parseFloat(item.dataset.preco);
+
+        ingredientes.push(item.value);
+
+    });
+
+
+    // Verifica se escolheu base
+
+    const base =
+        document.querySelector(
+            'input[name="basePoke"]:checked'
+        );
+
+    if (!base) {
+
+        alert("Escolha uma base para o seu Poke.");
+
+        return;
+
+    }
+
+
+    // Verifica proteína
+
+    const proteina =
+        document.querySelector(
+            'input[name="proteinaPoke"]:checked'
+        );
+
+    if (!proteina) {
+
+        alert("Escolha uma proteína para o seu Poke.");
+
+        return;
+
+    }
+
+
+    const nome =
+        "Poke Personalizado (" +
+        ingredientes.join(", ") +
+        ")";
+
+
+    // Adiciona ao carrinho
+
+    adicionarProduto(nome, total);
+
+
+    alert("🍣 Seu Poke foi adicionado ao carrinho!");
+
+
+    // Volta para o topo da categoria
+
+    document.getElementById("poke")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}

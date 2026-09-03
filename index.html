@@ -82,6 +82,10 @@
 
     <nav class="categorias">
 
+        <a href="#destaques">Destaques</a>
+        <a href="#combos">Combos</a>
+        <a href="#poke">POKÉ</a>
+        <a href="#entradas">Entradas</a>
         <a href="#entradas">Entradas</a>
         <a href="#sashimi">Sashimi</a>
         <a href="#niguiri">Niguiri</a>
@@ -103,6 +107,187 @@
         <!-- =========================
          ENTRADAS
     ========================== -->
+        <!-- =========================
+         MONTE SEU POKÉ
+    ========================== -->
+
+        <section id="poke" class="secao">
+
+            <h2>MONTE SEU POKÉ 🍣</h2>
+
+            <div class="montar-poke">
+
+                <!-- BASE -->
+
+                <div class="poke-grupo">
+
+                    <h3>🥗 Escolha sua base</h3>
+
+                    <label>
+                        <input type="radio"
+                               name="basePoke"
+                               value="Arroz Japonês"
+                               data-preco="8">
+                        Arroz Japonês — R$ 8,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="basePoke"
+                               value="Arroz Integral"
+                               data-preco="9">
+                        Arroz Integral — R$ 9,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="basePoke"
+                               value="Mix de Folhas"
+                               data-preco="7">
+                        Mix de Folhas — R$ 7,00
+                    </label>
+
+                </div>
+
+
+                <!-- PROTEÍNA -->
+
+                <div class="poke-grupo">
+
+                    <h3>🍣 Escolha sua proteína</h3>
+
+                    <label>
+                        <input type="radio"
+                               name="proteinaPoke"
+                               value="Salmão"
+                               data-preco="17">
+                        Salmão — R$ 17,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="proteinaPoke"
+                               value="Camarão"
+                               data-preco="15">
+                        Camarão — R$ 15,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="proteinaPoke"
+                               value="Frango"
+                               data-preco="12">
+                        Frango — R$ 12,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="proteinaPoke"
+                               value="Skin"
+                               data-preco="10">
+                        Skin — R$ 10,00
+                    </label>
+
+                </div>
+
+
+                <!-- COMPLEMENTOS -->
+
+                <div class="poke-grupo">
+
+                    <h3>🥢 Escolha seus complementos</h3>
+
+                    <label>
+                        <input type="checkbox"
+                               value="Cream Cheese"
+                               data-preco="5">
+                        Cream Cheese — R$ 5,00
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               value="Cebola Crispy"
+                               data-preco="4">
+                        Cebola Crispy — R$ 4,00
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               value="Gergelim"
+                               data-preco="3">
+                        Gergelim — R$ 3,00
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               value="Cebolinha"
+                               data-preco="2.50">
+                        Cebolinha — R$ 2,50
+                    </label>
+
+                </div>
+
+
+                <!-- MOLHO -->
+
+                <div class="poke-grupo">
+
+                    <h3>🥣 Escolha seu molho</h3>
+
+                    <label>
+                        <input type="radio"
+                               name="molhoPoke"
+                               value="Tarê"
+                               data-preco="3">
+                        Tarê — R$ 3,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="molhoPoke"
+                               value="Shoyu"
+                               data-preco="3">
+                        Shoyu — R$ 3,00
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="molhoPoke"
+                               value="Molho Picante"
+                               data-preco="4">
+                        Molho Picante — R$ 4,00
+                    </label>
+
+                </div>
+
+
+                <!-- RESUMO -->
+
+                <div class="poke-resumo">
+
+                    <h3>Seu Poke</h3>
+
+                    <p id="resumoPoke">
+                        Escolha os ingredientes acima.
+                    </p>
+
+                    <strong id="precoPoke">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <button class="botao-poke"
+                        onclick="adicionarPoke()">
+
+                    🛒 Adicionar Poke ao carrinho
+
+                </button>
+
+            </div>
+
+        </section>
 
         <section id="entradas" class="secao">
 
@@ -592,7 +777,7 @@
                             <strong>R$ 3,30</strong>
                         </div>
                         <button class="adicionar"
-                         onclick="adicionarProduto('Hot Filadélfia', 3.30)">
+                                onclick="adicionarProduto('Hot Filadélfia', 3.30)">
                             +
                         </button>
                     </div>
@@ -605,7 +790,7 @@
                             <strong>R$ 3,80</strong>
                         </div>
                         <button class="adicionar"
-                         onclick="adicionarProduto('Hot Tartar', 3.80)">
+                                onclick="adicionarProduto('Hot Tartar', 3.80)">
                             +
                         </button>
                     </div>
@@ -618,7 +803,7 @@
                             <strong>R$ 3,30</strong>
                         </div>
                         <button class="adicionar"
-                         onclick="adicionarProduto('Hot Camarão 100g', 3.30)">
+                                onclick="adicionarProduto('Hot Camarão 100g', 3.30)">
                             +
                         </button>
                     </div>
@@ -631,7 +816,7 @@
                             <strong>R$ 2,70</strong>
                         </div>
                         <button class="adicionar"
-                         onclick="adicionarProduto('Hot Skin', 2.70)">
+                                onclick="adicionarProduto('Hot Skin', 2.70)">
                             +
                         </button>
                     </div>
@@ -645,7 +830,7 @@
                             <strong>R$ 3,40</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Hot Pimenta', 3.40)">
+                                onclick="adicionarProduto('Hot Pimenta', 3.40)">
                             +
                         </button>
                     </div>
@@ -658,7 +843,7 @@
                             <strong>R$ 2,90</strong>
                         </div>
                         <button class="adicionar"
-                         onclick="adicionarProduto('Hot Banana com Nutela', 2.90)">
+                                onclick="adicionarProduto('Hot Banana com Nutela', 2.90)">
                             +
                         </button>
                     </div>
@@ -671,7 +856,7 @@
                             <strong>R$ 2,60</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Hot Romeu e Julieta', 2.60)">
+                                onclick="adicionarProduto('Hot Romeu e Julieta', 2.60)">
                             +
                         </button>
                     </div>
@@ -699,7 +884,7 @@
                             <strong>R$ 17,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Rolinho Primavera 50g', 17.00)">
+                                onclick="adicionarProduto('Rolinho Primavera 50g', 17.00)">
                             +
                         </button>
                     </div>
@@ -712,7 +897,7 @@
                             <strong>R$ 17,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Salmão 50g', 17.00)">
+                                onclick="adicionarProduto('Salmão 50g', 17.00)">
                             +
                         </button>
                     </div>
@@ -725,7 +910,7 @@
                             <strong>R$ 15,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Camarão', 15.00)">
+                                onclick="adicionarProduto('Camarão', 15.00)">
                             +
                         </button>
                     </div>
@@ -738,7 +923,7 @@
                             <strong>R$ 15,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Nutella com Morango', 15.00)">
+                                onclick="adicionarProduto('Nutella com Morango', 15.00)">
                             +
                         </button>
                     </div>
@@ -751,7 +936,7 @@
                             <strong>R$ 15,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Doce de Leite', 15.00)">
+                                onclick="adicionarProduto('Doce de Leite', 15.00)">
                             +
                         </button>
                     </div>
@@ -764,7 +949,7 @@
                             <strong>R$ 15,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Romeu e Julieta', 15.00)">
+                                onclick="adicionarProduto('Romeu e Julieta', 15.00)">
                             +
                         </button>
                     </div>
@@ -792,7 +977,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Uramaki Filadélfia 10 peças', 2.80)">
+                                onclick="adicionarProduto('Uramaki Filadélfia 10 peças', 2.80)">
                             +
                         </button>
                     </div>
@@ -805,7 +990,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Uramaki Salmão', 2.80)">
+                                onclick="adicionarProduto('Uramaki Salmão', 2.80)">
                             +
                         </button>
                     </div>
@@ -818,7 +1003,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Uramaki Camarão', 2.80)">
+                                onclick="adicionarProduto('Uramaki Camarão', 2.80)">
                             +
                         </button>
                     </div>
@@ -831,7 +1016,7 @@
                             <strong>R$ 3,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Uramaki Tartar', 3.80)">
+                                onclick="adicionarProduto('Uramaki Tartar', 3.80)">
                             +
                         </button>
                     </div>
@@ -844,7 +1029,7 @@
                             <strong>R$ 2,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Uramaki Skin', 2.50)">
+                                onclick="adicionarProduto('Uramaki Skin', 2.50)">
                             +
                         </button>
                     </div>
@@ -872,7 +1057,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Maki Filadélfia', 2.80)">
+                                onclick="adicionarProduto('Maki Filadélfia', 2.80)">
                             +
                         </button>
                     </div>
@@ -885,7 +1070,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Maki Salmão', 2.80)">
+                                onclick="adicionarProduto('Maki Salmão', 2.80)">
                             +
                         </button>
                     </div>
@@ -898,7 +1083,7 @@
                             <strong>R$ 2,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Maki Camarão', 2.80)">
+                                onclick="adicionarProduto('Maki Camarão', 2.80)">
                             +
                         </button>
                     </div>
@@ -911,7 +1096,7 @@
                             <strong>R$ 2,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Maki Skin', 2.50)">
+                                onclick="adicionarProduto('Maki Skin', 2.50)">
                             +
                         </button>
                     </div>
@@ -939,7 +1124,7 @@
                             <strong>R$ 6,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Amora', 6.50)">
+                                onclick="adicionarProduto('Ice Amora', 6.50)">
                             +
                         </button>
                     </div>
@@ -952,7 +1137,7 @@
                             <strong>R$ 7,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Tartar', 7.00)">
+                                onclick="adicionarProduto('Ice Tartar', 7.00)">
                             +
                         </button>
                     </div>
@@ -965,7 +1150,7 @@
                             <strong>R$ 7,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Tartar Camarão', 7.00)">
+                                onclick="adicionarProduto('Ice Tartar Camarão', 7.00)">
                             +
                         </button>
                     </div>
@@ -979,7 +1164,7 @@
                             <strong>R$ 6,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Premium', 6.50)">
+                                onclick="adicionarProduto('Ice Premium', 6.50)">
                             +
                         </button>
                     </div>
@@ -992,7 +1177,7 @@
                             <strong>R$ 6,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Tropical', 6.50)">
+                                onclick="adicionarProduto('Ice Tropical', 6.50)">
                             +
                         </button>
                     </div>
@@ -1005,7 +1190,7 @@
                             <strong>R$ 6,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Pimenta', 6.50)">
+                                onclick="adicionarProduto('Ice Pimenta', 6.50)">
                             +
                         </button>
                     </div>
@@ -1018,7 +1203,7 @@
                             <strong>R$ 6,50</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Flambado Tartar', 6.50)">
+                                onclick="adicionarProduto('Ice Flambado Tartar', 6.50)">
                             +
                         </button>
                     </div>
@@ -1031,7 +1216,7 @@
                             <strong>R$ 7,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Ice Especial Salmão com Camarão Empanado', 7.90)">
+                                onclick="adicionarProduto('Ice Especial Salmão com Camarão Empanado', 7.90)">
                             +
                         </button>
                     </div>
@@ -1059,7 +1244,7 @@
                             <strong>R$ 4,70</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Joy com Geleia de Amora', 4.70)">
+                                onclick="adicionarProduto('Joy com Geleia de Amora', 4.70)">
                             +
                         </button>
                     </div>
@@ -1072,7 +1257,7 @@
                             <strong>R$ 4,70</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Joy com Geleia de Pimenta', 4.70)">
+                                onclick="adicionarProduto('Joy com Geleia de Pimenta', 4.70)">
                             +
                         </button>
                     </div>
@@ -1085,7 +1270,7 @@
                             <strong>R$ 4,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Joy de Tartar', 4.80)">
+                                onclick="adicionarProduto('Joy de Tartar', 4.80)">
                             +
                         </button>
                     </div>
@@ -1098,7 +1283,7 @@
                             <strong>R$ 4,70</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Joy com Geleia de Pimenta e Cebola Crisp', 4.70)">
+                                onclick="adicionarProduto('Joy com Geleia de Pimenta e Cebola Crisp', 4.70)">
                             +
                         </button>
                     </div>
@@ -1126,7 +1311,7 @@
                             <strong>R$ 39,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Filadélfia', 39.90)">
+                                onclick="adicionarProduto('Filadélfia', 39.90)">
                             +
                         </button>
                     </div>
@@ -1141,7 +1326,7 @@
                             <strong>R$ 39,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Temaki Salmão', 39.90)">
+                                onclick="adicionarProduto('Temaki Salmão', 39.90)">
                             +
                         </button>
                     </div>
@@ -1154,7 +1339,7 @@
                             <strong>R$ 39,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Camarão Filadélfia', 39.90)">
+                                onclick="adicionarProduto('Camarão Filadélfia', 39.90)">
                             +
                         </button>
                     </div>
@@ -1182,7 +1367,7 @@
                             <strong>R$ 39,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Hot Fila', 39.90)">
+                                onclick="adicionarProduto('Hot Fila', 39.90)">
                             +
                         </button>
                     </div>
@@ -1195,7 +1380,7 @@
                             <strong>R$ 39,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Camarão Temaki', 39.90)">
+                                onclick="adicionarProduto('Camarão Temaki', 39.90)">
                             +
                         </button>
                     </div>
@@ -1208,7 +1393,7 @@
                             <strong>R$ 43,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Misto', 43.00)">
+                                onclick="adicionarProduto('Misto', 43.00)">
                             +
                         </button>
                     </div>
@@ -1222,7 +1407,7 @@
                             <strong>R$ 12,70</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Mini Temaki Salmão', 12.70)">
+                                onclick="adicionarProduto('Mini Temaki Salmão', 12.70)">
                             +
                         </button>
                     </div>
@@ -1235,7 +1420,7 @@
                             <strong>R$ 9,90</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Mini Temaki Fila', 9.90)">
+                                onclick="adicionarProduto('Mini Temaki Fila', 9.90)">
                             +
                         </button>
                     </div>
@@ -1248,7 +1433,7 @@
                             <strong>R$ 10,80</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Mini Temaki Camarão', 10.80)">
+                                onclick="adicionarProduto('Mini Temaki Camarão', 10.80)">
                             +
                         </button>
                     </div>
@@ -1262,7 +1447,7 @@
                             <strong>R$ 43,00</strong>
                         </div>
                         <button class="adicionar"
-                        onclick="adicionarProduto('Temaki Aberto', 43.00)">
+                                onclick="adicionarProduto('Temaki Aberto', 43.00)">
                             +
                         </button>
                     </div>
