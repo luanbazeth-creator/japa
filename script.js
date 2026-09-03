@@ -31,6 +31,33 @@ function adicionarProduto(nome, preco) {
 
 }
 
+function adicionarProduto(nome, preco) {
+
+    const produto = carrinho.find(
+        item => item.nome === nome
+    );
+
+    if (produto) {
+
+        produto.quantidade++;
+
+    } else {
+
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            quantidade: 1
+        });
+
+    }
+
+    atualizarCarrinho();
+
+    // Atualiza o número mostrado no produto
+    atualizarContadorProduto(nome);
+
+}
+
 
 /* =========================
    ATUALIZAR CARRINHO
@@ -90,6 +117,7 @@ function atualizarCarrinho() {
                 </button>
 
             </div>
+
         `;
 
         container.appendChild(item);
@@ -99,8 +127,64 @@ function atualizarCarrinho() {
     totalElemento.textContent =
         "R$ " + total.toFixed(2).replace(".", ",");
 
-}
 
+    // ==================================
+    // ATUALIZA OS NÚMEROS NOS PRODUTOS
+    // ==================================
+
+    document.querySelectorAll(".produto").forEach(card => {
+
+        const titulo = card.querySelector("h3");
+
+        if (!titulo)
+            return;
+
+        const nomeCard =
+            titulo.textContent.trim();
+
+        const produtoCarrinho =
+            carrinho.find(item =>
+                item.nome === nomeCard
+            );
+
+        let contador =
+            card.querySelector(".contador-produto");
+
+
+        // Se o produto está no carrinho
+        if (produtoCarrinho) {
+
+            if (!contador) {
+
+                contador =
+                    document.createElement("span");
+
+                contador.className =
+                    "contador-produto";
+
+                card.appendChild(contador);
+
+            }
+
+            contador.textContent =
+                produtoCarrinho.quantidade;
+
+        }
+
+        // Se não está mais no carrinho
+        else {
+
+            if (contador) {
+
+                contador.remove();
+
+            }
+
+        }
+
+    });
+
+}
 
 /* =========================
    ALTERAR QUANTIDADE
