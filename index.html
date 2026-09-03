@@ -108,172 +108,251 @@
          ENTRADAS
     ========================== -->
         <!-- =========================
-         MONTE SEU POKÉ
+         MONTE SEU POKE
     ========================== -->
 
         <section id="poke" class="secao">
 
-            <h2>MONTE SEU POKÉ 🍣</h2>
+            <h2>MONTE SEU POKE 🍣</h2>
 
             <div class="montar-poke">
 
                 <!-- BASE -->
-
                 <div class="poke-grupo">
 
-                    <h3>🥗 Escolha sua base</h3>
+                    <div class="poke-titulo">
+                        <div>
+                            <h3>🥗 Escolha sua base</h3>
+                            <small>Escolha 1 opção</small>
+                        </div>
+                    </div>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="basePoke"
                                value="Arroz Japonês"
                                data-preco="8">
-                        Arroz Japonês — R$ 8,00
+
+                        <span>
+                            <strong>Arroz Japonês</strong>
+                            <small>R$ 8,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="basePoke"
                                value="Arroz Integral"
                                data-preco="9">
-                        Arroz Integral — R$ 9,00
+
+                        <span>
+                            <strong>Arroz Integral</strong>
+                            <small>R$ 9,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="basePoke"
                                value="Mix de Folhas"
                                data-preco="7">
-                        Mix de Folhas — R$ 7,00
+
+                        <span>
+                            <strong>Mix de Folhas</strong>
+                            <small>R$ 7,00</small>
+                        </span>
                     </label>
 
                 </div>
 
 
                 <!-- PROTEÍNA -->
-
                 <div class="poke-grupo">
 
-                    <h3>🍣 Escolha sua proteína</h3>
+                    <div class="poke-titulo">
+                        <div>
+                            <h3>🍣 Escolha sua proteína</h3>
+                            <small>Escolha 1 opção</small>
+                        </div>
+                    </div>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="proteinaPoke"
                                value="Salmão"
                                data-preco="17">
-                        Salmão — R$ 17,00
+
+                        <span>
+                            <strong>Salmão</strong>
+                            <small>R$ 17,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="proteinaPoke"
                                value="Camarão"
                                data-preco="15">
-                        Camarão — R$ 15,00
+
+                        <span>
+                            <strong>Camarão</strong>
+                            <small>R$ 15,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="proteinaPoke"
                                value="Frango"
                                data-preco="12">
-                        Frango — R$ 12,00
+
+                        <span>
+                            <strong>Frango</strong>
+                            <small>R$ 12,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="proteinaPoke"
                                value="Skin"
                                data-preco="10">
-                        Skin — R$ 10,00
+
+                        <span>
+                            <strong>Skin</strong>
+                            <small>R$ 10,00</small>
+                        </span>
                     </label>
 
                 </div>
 
 
                 <!-- COMPLEMENTOS -->
-
                 <div class="poke-grupo">
 
-                    <h3>🥢 Escolha seus complementos</h3>
+                    <div class="poke-titulo">
+                        <div>
+                            <h3>🥢 Complementos</h3>
+                            <small>Escolha até 3 opções</small>
+                        </div>
+                    </div>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="checkbox"
+                               name="complementoPoke"
                                value="Cream Cheese"
                                data-preco="5">
-                        Cream Cheese — R$ 5,00
+
+                        <span>
+                            <strong>Cream Cheese</strong>
+                            <small>+ R$ 5,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="checkbox"
+                               name="complementoPoke"
                                value="Cebola Crispy"
                                data-preco="4">
-                        Cebola Crispy — R$ 4,00
+
+                        <span>
+                            <strong>Cebola Crispy</strong>
+                            <small>+ R$ 4,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="checkbox"
+                               name="complementoPoke"
                                value="Gergelim"
                                data-preco="3">
-                        Gergelim — R$ 3,00
+
+                        <span>
+                            <strong>Gergelim</strong>
+                            <small>+ R$ 3,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="checkbox"
+                               name="complementoPoke"
                                value="Cebolinha"
-                               data-preco="2.50">
-                        Cebolinha — R$ 2,50
+                               data-preco="2.5">
+
+                        <span>
+                            <strong>Cebolinha</strong>
+                            <small>+ R$ 2,50</small>
+                        </span>
                     </label>
 
                 </div>
 
 
                 <!-- MOLHO -->
-
                 <div class="poke-grupo">
 
-                    <h3>🥣 Escolha seu molho</h3>
+                    <div class="poke-titulo">
+                        <div>
+                            <h3>🥣 Escolha seu molho</h3>
+                            <small>Escolha 1 opção</small>
+                        </div>
+                    </div>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="molhoPoke"
                                value="Tarê"
                                data-preco="3">
-                        Tarê — R$ 3,00
+
+                        <span>
+                            <strong>Tarê</strong>
+                            <small>R$ 3,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="molhoPoke"
                                value="Shoyu"
                                data-preco="3">
-                        Shoyu — R$ 3,00
+
+                        <span>
+                            <strong>Shoyu</strong>
+                            <small>R$ 3,00</small>
+                        </span>
                     </label>
 
-                    <label>
+                    <label class="poke-opcao">
                         <input type="radio"
                                name="molhoPoke"
                                value="Molho Picante"
                                data-preco="4">
-                        Molho Picante — R$ 4,00
+
+                        <span>
+                            <strong>Molho Picante</strong>
+                            <small>R$ 4,00</small>
+                        </span>
                     </label>
 
                 </div>
 
 
                 <!-- RESUMO -->
-
                 <div class="poke-resumo">
 
-                    <h3>Seu Poke</h3>
+                    <h3>🍣 Seu Poke</h3>
 
-                    <p id="resumoPoke">
+                    <div id="resumoPoke">
                         Escolha os ingredientes acima.
-                    </p>
+                    </div>
 
-                    <strong id="precoPoke">
-                        R$ 0,00
-                    </strong>
+                    <div class="poke-total">
+                        <span>Total</span>
+
+                        <strong id="precoPoke">
+                            R$ 0,00
+                        </strong>
+                    </div>
 
                 </div>
 
@@ -281,7 +360,7 @@
                 <button class="botao-poke"
                         onclick="adicionarPoke()">
 
-                    🛒 Adicionar Poke ao carrinho
+                    🛒 ADICIONAR AO CARRINHO
 
                 </button>
 

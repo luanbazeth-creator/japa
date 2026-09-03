@@ -523,7 +523,7 @@ campoPesquisa.addEventListener("input", function () {
 });
 
 /* =========================
-   MONTAR POKÉ
+   MONTE SEU POKE
 ========================= */
 
 function calcularPoke() {
@@ -532,12 +532,10 @@ function calcularPoke() {
     let ingredientes = [];
 
 
-    // RADIO BUTTONS
+    // Todas as opções selecionadas
 
     document.querySelectorAll(
-        'input[name="basePoke"]:checked, ' +
-        'input[name="proteinaPoke"]:checked, ' +
-        'input[name="molhoPoke"]:checked'
+        '.montar-poke input:checked'
     ).forEach(item => {
 
         total += parseFloat(item.dataset.preco);
@@ -547,45 +545,77 @@ function calcularPoke() {
     });
 
 
-    // COMPLEMENTOS
+    // Atualiza preço
 
-    document.querySelectorAll(
-        '.poke-grupo input[type="checkbox"]:checked'
-    ).forEach(item => {
+    const preco =
+        document.getElementById("precoPoke");
 
-        total += parseFloat(item.dataset.preco);
+    if (preco) {
 
-        ingredientes.push(item.value);
+        preco.textContent =
+            "R$ " +
+            total.toFixed(2).replace(".", ",");
 
-    });
-
-
-    // PREÇO
-
-    document.getElementById("precoPoke").textContent =
-        "R$ " + total.toFixed(2).replace(".", ",");
+    }
 
 
-    // RESUMO
+    // Atualiza resumo
 
-    if (ingredientes.length > 0) {
+    const resumo =
+        document.getElementById("resumoPoke");
 
-        document.getElementById("resumoPoke").textContent =
-            ingredientes.join(" • ");
+    if (resumo) {
 
-    } else {
+        if (ingredientes.length > 0) {
 
-        document.getElementById("resumoPoke").textContent =
-            "Escolha os ingredientes acima.";
+            resumo.textContent =
+                ingredientes.join(" • ");
+
+        } else {
+
+            resumo.textContent =
+                "Escolha os ingredientes acima.";
+
+        }
 
     }
 
 }
 
 
-// Atualiza o preço sempre que clicar em alguma opção
+/* =========================
+   LIMITAR COMPLEMENTOS
+========================= */
 
 document.addEventListener("change", function (event) {
+
+    if (
+        event.target.matches(
+            'input[name="complementoPoke"]'
+        )
+    ) {
+
+        const selecionados =
+            document.querySelectorAll(
+                'input[name="complementoPoke"]:checked'
+            );
+
+        if (selecionados.length > 3) {
+
+            event.target.checked = false;
+
+            alert(
+                "Você pode escolher no máximo 3 complementos."
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    // Atualiza o preço
 
     if (
         event.target.closest(".montar-poke")
@@ -599,36 +629,32 @@ document.addEventListener("change", function (event) {
 
 
 /* =========================
-   ADICIONAR POKÉ AO CARRINHO
+   ADICIONAR POKE
 ========================= */
 
 function adicionarPoke() {
-
-    let total = 0;
-    let ingredientes = [];
-
-
-    document.querySelectorAll(
-        '.montar-poke input:checked'
-    ).forEach(item => {
-
-        total += parseFloat(item.dataset.preco);
-
-        ingredientes.push(item.value);
-
-    });
-
-
-    // Verifica se escolheu base
 
     const base =
         document.querySelector(
             'input[name="basePoke"]:checked'
         );
 
+    const proteina =
+        document.querySelector(
+            'input[name="proteinaPoke"]:checked'
+        );
+
+    const molho =
+        document.querySelector(
+            'input[name="molhoPoke"]:checked'
+        );
+
+
+    // Verifica base
+
     if (!base) {
 
-        alert("Escolha uma base para o seu Poke.");
+        alert("🥗 Escolha uma base para o seu Poke.");
 
         return;
 
@@ -637,39 +663,93 @@ function adicionarPoke() {
 
     // Verifica proteína
 
-    const proteina =
-        document.querySelector(
-            'input[name="proteinaPoke"]:checked'
-        );
-
     if (!proteina) {
 
-        alert("Escolha uma proteína para o seu Poke.");
+        alert("🍣 Escolha uma proteína para o seu Poke.");
 
         return;
 
     }
 
 
+    // Verifica molho
+
+    if (!molho) {
+
+        alert("🥣 Escolha um molho para o seu Poke.");
+
+        return;
+
+    }
+
+
+    let ingredientes = [];
+    let total = 0;
+
+
+    // Pega tudo que foi selecionado
+
+    document.querySelectorAll(
+        '.montar-poke input:checked'
+    ).forEach(item => {
+
+        ingredientes.push(item.value);
+
+        total +=
+            parseFloat(item.dataset.preco);
+
+    });
+
+
+    // Nome do produto
+
     const nome =
-        "Poke Personalizado (" +
-        ingredientes.join(", ") +
-        ")";
+        "Poke Personalizado";
 
 
     // Adiciona ao carrinho
 
-    adicionarProduto(nome, total);
+    adicionarProduto(
+        nome,
+        total
+    );
 
 
-    alert("🍣 Seu Poke foi adicionado ao carrinho!");
+    // Guarda os ingredientes
+    // para mostrar no carrinho
+
+    const produto =
+        carrinho.find(
+            item => item.nome === nome
+        );
+
+    if (produto) {
+
+        produto.detalhes =
+            ingredientes.join(", ");
+
+    }
 
 
-    // Volta para o topo da categoria
+    atualizarCarrinho();
 
-    document.getElementById("poke")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+
+    alert(
+        "🍣 Poke personalizado adicionado ao carrinho!"
+    );
+
+
+    // Limpa as escolhas
+
+    document.querySelectorAll(
+        '.montar-poke input'
+    ).forEach(input => {
+
+        input.checked = false;
+
+    });
+
+
+    calcularPoke();
 
 }

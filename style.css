@@ -752,3 +752,168 @@ body {
     font-weight: bold;
     box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
+
+/* =========================
+   MONTE SEU POKE
+========================= */
+
+.montar-poke {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.poke-grupo {
+    background: #fff;
+    border: 1px solid #f3dce2;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(143, 41, 72, 0.07);
+}
+
+.poke-titulo {
+    margin-bottom: 12px;
+}
+
+    .poke-titulo h3 {
+        margin: 0 0 3px;
+        color: #71243c;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+    }
+
+    .poke-titulo small {
+        color: #98727e;
+        font-size: 13px;
+    }
+
+
+/* OPÇÕES */
+
+.poke-opcao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 12px;
+    margin-top: 8px;
+    border: 1px solid #f0d6df;
+    border-radius: 14px;
+    background: #fffafa;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .poke-opcao:hover {
+        background: #fdf0f4;
+        border-color: #e9a3b8;
+    }
+
+    .poke-opcao:has(input:checked) {
+        background: #f9dce5;
+        border-color: #8f2948;
+    }
+
+
+    /* RADIO / CHECKBOX */
+
+    .poke-opcao input {
+        width: 19px;
+        height: 19px;
+        accent-color: #8f2948;
+        flex-shrink: 0;
+    }
+
+
+    /* TEXTO */
+
+    .poke-opcao span {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .poke-opcao strong {
+        color: #3b1b25;
+        font-size: 15px;
+    }
+
+    .poke-opcao small {
+        color: #9a3152;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+/* =========================
+   RESUMO
+========================= */
+
+.poke-resumo {
+    padding: 20px;
+    background: #f9dce5;
+    border: 1px solid #efc5d1;
+    border-radius: 22px;
+    color: #542735;
+}
+
+    .poke-resumo h3 {
+        margin: 0 0 12px;
+        color: #71243c;
+        font-family: 'Playfair Display', serif;
+        font-size: 21px;
+    }
+
+#resumoPoke {
+    line-height: 1.6;
+    color: #80636c;
+    font-size: 14px;
+}
+
+.poke-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e9b8c7;
+}
+
+    .poke-total span {
+        color: #71243c;
+        font-weight: 600;
+    }
+
+    .poke-total strong {
+        color: #8f2948;
+        font-size: 24px;
+    }
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao-poke {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 17px;
+    background: #8f2948;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(143, 41, 72, 0.25);
+    transition: 0.2s;
+}
+
+    .botao-poke:hover {
+        background: #702038;
+        transform: translateY(-2px);
+    }
+
+    .botao-poke:active {
+        transform: scale(0.98);
+    }
