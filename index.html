@@ -2145,10 +2145,18 @@
      In&iacute;cio
     </span>
    </button>
-   <button onclick="abrirCarrinho()">
+   <button class="botao-carrinho-nav" onclick="abrirCarrinho()" type="button">
     🛒
     <span>
      Carrinho
+    </span>
+
+    <!-- Quantidade total de itens no carrinho -->
+    <span
+     class="contador-carrinho"
+     id="contadorCarrinho"
+     aria-label="Quantidade de itens no carrinho">
+     0
     </span>
    </button>
    <button onclick="mostrarMenu()">
@@ -2165,9 +2173,9 @@
   <!-- =========================
          CARRINHO
     ========================== -->
-  <div class="carrinho-modal" id="carrinhoModal">
+  <div class="carrinho-modal" id="carrinhoModal" role="dialog" aria-modal="true" aria-label="Seu pedido">
    <div class="carrinho">
-    <button class="fechar-carrinho" onclick="fecharCarrinho()">
+    <button class="fechar-carrinho" onclick="fecharCarrinho()" type="button" aria-label="Fechar carrinho">
      &times;
     </button>
     <h2>
@@ -2183,6 +2191,26 @@
       R$ 0,00
      </strong>
     </div>
+    <!-- =========================
+         ENDEREÇO DE ENTREGA
+    ========================== -->
+    <div class="endereco-entrega">
+     <h3>
+      📍 Endereço de entrega
+     </h3>
+     <p>
+      Informe onde devemos entregar seu pedido.
+     </p>
+     <label for="enderecoCliente">Endereço completo</label>
+     <textarea
+      id="enderecoCliente"
+      rows="3"
+      placeholder="Rua, número, bairro, complemento e ponto de referência"></textarea>
+    </div>
+
+    <!-- =========================
+         FORMA DE PAGAMENTO
+    ========================== -->
     <div class="pagamento">
      <h3>
       Forma de pagamento

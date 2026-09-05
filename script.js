@@ -148,15 +148,25 @@ function alterarQuantidade(index, valor) {
 
 function abrirCarrinho() {
     const modal = document.getElementById("carrinhoModal");
-    if (!modal) return;
+
+    if (!modal) {
+        console.error("Elemento #carrinhoModal não encontrado.");
+        return;
+    }
+
+    atualizarCarrinho();
 
     modal.classList.add("aberto");
-    atualizarCarrinho();
+    document.body.classList.add("carrinho-aberto");
 }
 
 function fecharCarrinho() {
     const modal = document.getElementById("carrinhoModal");
-    if (modal) modal.classList.remove("aberto");
+
+    if (!modal) return;
+
+    modal.classList.remove("aberto");
+    document.body.classList.remove("carrinho-aberto");
 }
 
 function selecionarPagamento(tipo) {
@@ -204,31 +214,64 @@ function finalizarPedido() {
         return;
     }
 
-    const total = carrinho.reduce((soma, produto) => soma + produto.preco * produto.quantidade, 0);
-    let mensagem = "🍣 *NOVO PEDIDO - HOUSE DELIVERY*%0A%0A";
+    const campoEndereco = document.getElementById("enderecoCliente");
+    const endereco = campoEndereco ? campoEndereco.value.trim() : "";
+
+    if (!endereco) {
+        alert("Informe o endereço de entrega.");
+        if (campoEndereco) campoEndereco.focus();
+        return;
+    }
+
+    const total = carrinho.reduce(
+        (soma, produto) => soma + produto.preco * produto.quantidade,
+        0
+    );
+
+    const linhasPedido = [];
+
+    linhasPedido.push("🍣 *NOVO PEDIDO - HOUSE DELIVERY*");
+    linhasPedido.push("");
 
     carrinho.forEach(produto => {
         const subtotal = produto.preco * produto.quantidade;
-        mensagem += `${produto.quantidade}x ${produto.nome} - R$ ${subtotal.toFixed(2).replace('.', ',')}%0A`;
-        if (produto.detalhes) mensagem += `   Ingredientes: ${produto.detalhes}%0A`;
+
+        linhasPedido.push(
+            `${produto.quantidade}x ${produto.nome} - ${formatarMoeda(subtotal)}`
+        );
+
+        if (produto.detalhes) {
+            linhasPedido.push(`   Ingredientes: ${produto.detalhes}`);
+        }
     });
 
-    mensagem += `%0A💰 *Total: R$ ${total.toFixed(2).replace('.', ',')}*`;
-    mensagem += `%0A💳 Pagamento: ${pagamentoSelecionado}`;
+    linhasPedido.push("");
+    linhasPedido.push(`💰 *Total: ${formatarMoeda(total)}*`);
+    linhasPedido.push(`💳 Pagamento: ${pagamentoSelecionado}`);
+    linhasPedido.push(`📍 *Endereço:* ${endereco}`);
 
     if (pagamentoSelecionado === "Dinheiro") {
-        const valor = parseFloat(document.getElementById("valorDinheiro").value);
+        const campoDinheiro = document.getElementById("valorDinheiro");
+        const valor = parseFloat(campoDinheiro?.value);
+
         if (isNaN(valor) || valor < total) {
             alert("Informe um valor válido para o troco.");
             return;
         }
+
         const troco = valor - total;
-        mensagem += `%0A💵 Troco para: R$ ${valor.toFixed(2).replace('.', ',')}`;
-        mensagem += `%0A💵 Troco: R$ ${troco.toFixed(2).replace('.', ',')}`;
+
+        linhasPedido.push(`💵 Troco para: ${formatarMoeda(valor)}`);
+        linhasPedido.push(`💵 Troco: ${formatarMoeda(troco)}`);
     }
 
-    const numero = "5522998953298";
-    window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+    const numero = "55229989532986";
+    const mensagem = encodeURIComponent(linhasPedido.join("\n"));
+
+    window.open(
+        `https://wa.me/${numero}?text=${mensagem}`,
+        "_blank"
+    );
 }
 
 // ===============================
@@ -426,6 +469,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (campo) campo.addEventListener('input', () => pesquisarProdutos(campo.value));
 
     atualizarCarrinho();
+});
+
+document.addEventListener('click', function (event) {
+    const modal = document.getElementById('carrinhoModal');
+
+    if (modal && event.target === modal) {
+        fecharCarrinho();
+    }
 });
 
 document.addEventListener('keydown', function (event) {
