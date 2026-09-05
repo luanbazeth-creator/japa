@@ -1,3 +1,15 @@
+/* =========================================================
+   HOUSE DELIVERY - JAVASCRIPT
+   ---------------------------------------------------------
+   Este arquivo controla:
+   1. Carrinho
+   2. Quantidades dos produtos
+   3. Pagamento e troco
+   4. Monte seu Poke
+   5. Navegação por categorias
+   6. Busca de produtos
+========================================================= */
+
 let carrinho = [];
 let pagamentoSelecionado = "";
 let categoriaAtual = null;
@@ -215,7 +227,7 @@ function finalizarPedido() {
         mensagem += `%0A💵 Troco: R$ ${troco.toFixed(2).replace('.', ',')}`;
     }
 
-    const numero = "5522998953298";
+    const numero = "5522998168216";
     window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
 }
 
@@ -229,11 +241,15 @@ function alterarPoke(nome, preco, valor) {
     }
 
     poke[nome].quantidade += valor;
-    if (poke[nome].quantidade < 0) poke[nome].quantidade = 0;
+    if (poke[nome].quantidade < 0) {
+        poke[nome].quantidade = 0;
+    }
 
     const id = "qtd-" + nome;
     const elemento = document.getElementById(id);
-    if (elemento) elemento.textContent = poke[nome].quantidade;
+    if (elemento) {
+        elemento.textContent = poke[nome].quantidade;
+    }
 
     calcularPoke();
 }
@@ -311,7 +327,6 @@ function abrirCategoria(id) {
     const campo = document.getElementById('campoPesquisa');
     if (campo) campo.value = '';
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function voltarCategorias() {
@@ -332,7 +347,6 @@ function voltarCategorias() {
     if (voltar) voltar.classList.remove('visivel');
     if (campo) campo.value = '';
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function pesquisarProdutos(valor) {

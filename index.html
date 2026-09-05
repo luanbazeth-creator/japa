@@ -1,1156 +1,2219 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HOUSE DELIVERY - Sushi</title>
-<link href="style.css" rel="stylesheet"/>
-</head>
-<body>
-<!-- =========================
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   HOUSE DELIVERY - Sushi
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- =========================
          CABEÇALHO
     ========================== -->
-<header class="cabecalho">
-<div class="logo">
-<span>HOUSE</span>
-<small>DELIVERY</small>
-<b>SUSHI</b>
-</div>
-<div class="restaurante">
-<h1>HOUSE DELIVERY</h1>
-<p>
-<span class="aberto">
-                    ● Aberto até às 23h00
-                </span>
-                · 📍 PORCIÚNCULA - RJ
-            </p>
-<p>
-                Pedido mínimo:
-                <strong>R$ 30,00</strong>
-</p>
-<div class="entrega">
-<button>
-                    🏍️ Entrega ~120 min
-                </button>
-<button>
-                    🏪 Retirada ~30 min
-                </button>
-</div>
-</div>
-</header>
-<!-- =========================
+  <header class="cabecalho">
+   <div class="logo">
+    <span>
+     HOUSE
+    </span>
+    <small>
+     DELIVERY
+    </small>
+    <b>
+     SUSHI
+    </b>
+   </div>
+   <div class="restaurante">
+    <h1>
+     HOUSE DELIVERY
+    </h1>
+    <p>
+     <span class="aberto">
+      ● Aberto at&eacute; &agrave;s 23h00
+     </span>
+     &middot; 📍 PORCI&Uacute;NCULA - RJ
+    </p>
+    <p>
+     Pedido m&iacute;nimo:
+     <strong>
+      R$ 30,00
+     </strong>
+    </p>
+    <div class="entrega">
+     <button>
+      🏍️ Entrega ~120 min
+     </button>
+     <button>
+      🏪 Retirada ~30 min
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- =========================
          PESQUISA
     ========================== -->
-<div class="pesquisa">
-<span>🔍</span>
-<input id="campoPesquisa" placeholder="Busque por um produto" type="text"/>
-<button onclick="mostrarMenu()">☰</button>
-</div>
-<!-- =========================
+  <div class="pesquisa">
+   <span>
+    🔍
+   </span>
+   <input id="campoPesquisa" placeholder="Busque por um produto" type="text"/>
+   <button onclick="mostrarMenu()">
+    ☰
+   </button>
+  </div>
+  <!-- =========================
          CATEGORIAS / MENU
     ========================== -->
-<div class="pagina-categorias" id="paginaCategorias">
-<div class="titulo-categorias">
-<h2>ESCOLHA UMA CATEGORIA</h2>
-<p>Toque em uma categoria para ver somente os produtos dela.</p>
-</div>
-<nav class="categorias">
-<button class="categoria-card" onclick="abrirCategoria('entradas')" type="button">
-<span><strong>Entradas</strong><small>Para começar os trabalhos</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('sashimi')" type="button">
-<span><strong>Sashimi</strong><small>Fatias frescas e selecionadas</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('niguiri')" type="button">
-<span><strong>Niguiri</strong><small>Clássicos da casa</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('makihot')" type="button">
-<span><strong>Maki Hot</strong><small>Enrolados quentes e crocantes</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('sobremesas')" type="button">
-<span><strong>Sobremesas</strong><small>Doces para finalizar</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('uramaki')" type="button">
-<span><strong>Uramaki</strong><small>Enrolados especiais</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('makimono')" type="button">
-<span><strong>Makimono</strong><small>10 peças</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('salmaoice')" type="button">
-<span><strong>Salmão Ice</strong><small>Combinações especiais</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('joys')" type="button">
-<span><strong>Joys</strong><small>Peças especiais da casa</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('temaki')" type="button">
-<span><strong>Temaki</strong><small>Sushi em formato cônico</small></span><b>+</b>
-</button>
-<button class="categoria-card" onclick="abrirCategoria('temakihot')" type="button">
-<span><strong>Temaki Hot</strong><small>Temakis quentes e especiais</small></span><b>+</b>
-</button>
-<button class="categoria-card categoria-poke" onclick="abrirCategoria('montar-poke')" type="button">
-<span><strong>🥗 Monte seu Poke</strong><small>Escolha os ingredientes e monte do seu jeito</small></span><b>+</b>
-</button>
-</nav>
-</div>
-<button class="voltar-categorias" id="voltarCategorias" onclick="voltarCategorias()" type="button">
-        ← Voltar para categorias
+  <div class="pagina-categorias" id="paginaCategorias">
+   <div class="titulo-categorias">
+    <h2>
+     ESCOLHA UMA CATEGORIA
+    </h2>
+    <p>
+     Toque em uma categoria para ver somente os produtos dela.
+    </p>
+   </div>
+   <nav class="categorias">
+    <button class="categoria-card" onclick="abrirCategoria('entradas')" type="button">
+     <span>
+      <strong>
+       Entradas
+      </strong>
+      <small>
+       Para come&ccedil;ar os trabalhos
+      </small>
+     </span>
+     <b>
+      +
+     </b>
     </button>
-<main>
-<!-- =========================
+    <button class="categoria-card" onclick="abrirCategoria('sashimi')" type="button">
+     <span>
+      <strong>
+       Sashimi
+      </strong>
+      <small>
+       Fatias frescas e selecionadas
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('niguiri')" type="button">
+     <span>
+      <strong>
+       Niguiri
+      </strong>
+      <small>
+       Cl&aacute;ssicos da casa
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('makihot')" type="button">
+     <span>
+      <strong>
+       Maki Hot
+      </strong>
+      <small>
+       Enrolados quentes e crocantes
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('sobremesas')" type="button">
+     <span>
+      <strong>
+       Sobremesas
+      </strong>
+      <small>
+       Doces para finalizar
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('uramaki')" type="button">
+     <span>
+      <strong>
+       Uramaki
+      </strong>
+      <small>
+       Enrolados especiais
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('makimono')" type="button">
+     <span>
+      <strong>
+       Makimono
+      </strong>
+      <small>
+       10 pe&ccedil;as
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('salmaoice')" type="button">
+     <span>
+      <strong>
+       Salm&atilde;o Ice
+      </strong>
+      <small>
+       Combina&ccedil;&otilde;es especiais
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('joys')" type="button">
+     <span>
+      <strong>
+       Joys
+      </strong>
+      <small>
+       Pe&ccedil;as especiais da casa
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('temaki')" type="button">
+     <span>
+      <strong>
+       Temaki
+      </strong>
+      <small>
+       Sushi em formato c&ocirc;nico
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card" onclick="abrirCategoria('temakihot')" type="button">
+     <span>
+      <strong>
+       Temaki Hot
+      </strong>
+      <small>
+       Temakis quentes e especiais
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+    <button class="categoria-card categoria-poke" onclick="abrirCategoria('montar-poke')" type="button">
+     <span>
+      <strong>
+       🥗 Monte seu Poke
+      </strong>
+      <small>
+       Escolha os ingredientes e monte do seu jeito
+      </small>
+     </span>
+     <b>
+      +
+     </b>
+    </button>
+   </nav>
+  </div>
+  <button class="voltar-categorias" id="voltarCategorias" onclick="voltarCategorias()" type="button">
+   &larr; Voltar para categorias
+  </button>
+  <main>
+   <!-- =========================
          ENTRADAS
     ========================== -->
-<section class="secao" id="entradas">
-<h2>ENTRADAS</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Tempurá de Camarão</h3>
-<p>
-                            10 camarões - aproximadamente 250g.
-                        </p>
-<div class="precos">
-<strong>R$ 49,90</strong>
-<div class="controle-produto" data-preco="49.90" data-produto="Tempurá de Camarão">
-<button aria-label="Diminuir Tempurá de Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tempurá de Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Tempurá de Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tempurá de Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Camarão Imperial</h3>
-<p>
-                            Preparação especial com camarões.
-                        </p>
-<div class="precos">
-<strong>R$ 49,00</strong>
-<div class="controle-produto" data-preco="49.00" data-produto="Camarão Imperial">
-<button aria-label="Diminuir Camarão Imperial" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camarão Imperial', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Camarão Imperial" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camarão Imperial', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ceviche Salmão</h3>
-<p>
-                            200g de ceviche de salmão.
-                        </p>
-<div class="precos">
-<strong>R$ 46,00</strong>
-<div class="controle-produto" data-preco="46.00" data-produto="Ceviche Salmão">
-<button aria-label="Diminuir Ceviche Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ceviche Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ceviche Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ceviche Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ceviche Tilápia</h3>
-<p>
-                            Ceviche preparado com tilápia.
-                        </p>
-<div class="precos">
-<strong>R$ 39,00</strong>
-<div class="controle-produto" data-preco="39.00" data-produto="Ceviche Tilápia">
-<button aria-label="Diminuir Ceviche Tilápia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ceviche Tilápia', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ceviche Tilápia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ceviche Tilápia', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Sunomono Salmão + Kani</h3>
-<p>
-                            50g.
-                        </p>
-<div class="precos">
-<strong>R$ 25,00</strong>
-<div class="controle-produto" data-preco="25.00" data-produto="Sunomono Salmão + Kani">
-<button aria-label="Diminuir Sunomono Salmão + Kani" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Sunomono Salmão + Kani', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Sunomono Salmão + Kani" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Sunomono Salmão + Kani', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Sunomono Kani</h3>
-<p>
-                            Preparação tradicional japonesa.
-                        </p>
-<div class="precos">
-<strong>R$ 18,00</strong>
-<div class="controle-produto" data-preco="18.00" data-produto="Sunomono Kani">
-<button aria-label="Diminuir Sunomono Kani" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Sunomono Kani', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Sunomono Kani" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Sunomono Kani', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Big Hot 80g Salmão</h3>
-<div class="precos">
-<strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Big Hot 80g Salmão">
-<button aria-label="Diminuir Big Hot 80g Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Big Hot 80g Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Big Hot 80g Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Big Hot 80g Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Big Hot Misto</h3>
-<p>
-                            Salmão + camarão.
-                        </p>
-<div class="precos">
-<strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Big Hot Misto">
-<button aria-label="Diminuir Big Hot Misto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Big Hot Misto', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Big Hot Misto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Big Hot Misto', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Poke Salmão</h3>
-<p>
-                            150g arroz, 100g salmão, 100g pepino,
+   <section class="secao" id="entradas">
+    <h2>
+     ENTRADAS
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Tempur&aacute; de Camar&atilde;o
+       </h3>
+       <p>
+        10 camar&otilde;es - aproximadamente 250g.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 49,90
+        </strong>
+        <div class="controle-produto" data-preco="49.90" data-produto="Tempur&aacute; de Camar&atilde;o">
+         <button aria-label="Diminuir Tempur&aacute; de Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tempur&aacute; de Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Tempur&aacute; de Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tempur&aacute; de Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Camar&atilde;o Imperial
+       </h3>
+       <p>
+        Prepara&ccedil;&atilde;o especial com camar&otilde;es.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 49,00
+        </strong>
+        <div class="controle-produto" data-preco="49.00" data-produto="Camar&atilde;o Imperial">
+         <button aria-label="Diminuir Camar&atilde;o Imperial" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camar&atilde;o Imperial', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Camar&atilde;o Imperial" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camar&atilde;o Imperial', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ceviche Salm&atilde;o
+       </h3>
+       <p>
+        200g de ceviche de salm&atilde;o.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 46,00
+        </strong>
+        <div class="controle-produto" data-preco="46.00" data-produto="Ceviche Salm&atilde;o">
+         <button aria-label="Diminuir Ceviche Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ceviche Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ceviche Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ceviche Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ceviche Til&aacute;pia
+       </h3>
+       <p>
+        Ceviche preparado com til&aacute;pia.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 39,00
+        </strong>
+        <div class="controle-produto" data-preco="39.00" data-produto="Ceviche Til&aacute;pia">
+         <button aria-label="Diminuir Ceviche Til&aacute;pia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ceviche Til&aacute;pia', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ceviche Til&aacute;pia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ceviche Til&aacute;pia', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Sunomono Salm&atilde;o + Kani
+       </h3>
+       <p>
+        50g.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 25,00
+        </strong>
+        <div class="controle-produto" data-preco="25.00" data-produto="Sunomono Salm&atilde;o + Kani">
+         <button aria-label="Diminuir Sunomono Salm&atilde;o + Kani" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Sunomono Salm&atilde;o + Kani', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Sunomono Salm&atilde;o + Kani" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Sunomono Salm&atilde;o + Kani', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Sunomono Kani
+       </h3>
+       <p>
+        Prepara&ccedil;&atilde;o tradicional japonesa.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 18,00
+        </strong>
+        <div class="controle-produto" data-preco="18.00" data-produto="Sunomono Kani">
+         <button aria-label="Diminuir Sunomono Kani" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Sunomono Kani', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Sunomono Kani" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Sunomono Kani', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Big Hot 80g Salm&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Big Hot 80g Salm&atilde;o">
+         <button aria-label="Diminuir Big Hot 80g Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Big Hot 80g Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Big Hot 80g Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Big Hot 80g Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Big Hot Misto
+       </h3>
+       <p>
+        Salm&atilde;o + camar&atilde;o.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Big Hot Misto">
+         <button aria-label="Diminuir Big Hot Misto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Big Hot Misto', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Big Hot Misto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Big Hot Misto', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Poke Salm&atilde;o
+       </h3>
+       <p>
+        150g arroz, 100g salm&atilde;o, 100g pepino,
                             50g cream cheese, 50g kani e 50g crispy.
-                        </p>
-<div class="precos">
-<strong>R$ 49,90</strong>
-<div class="controle-produto" data-preco="49.90" data-produto="Poke Salmão">
-<button aria-label="Diminuir Poke Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Poke Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Poke Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Poke Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Poke Salmão + Camarão</h3>
-<p>
-                            80g salmão, 80g camarão, 150g arroz,
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 49,90
+        </strong>
+        <div class="controle-produto" data-preco="49.90" data-produto="Poke Salm&atilde;o">
+         <button aria-label="Diminuir Poke Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Poke Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Poke Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Poke Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Poke Salm&atilde;o + Camar&atilde;o
+       </h3>
+       <p>
+        80g salm&atilde;o, 80g camar&atilde;o, 150g arroz,
                             50g cream cheese, cebola roxa,
                             milho e tomatinho.
-                        </p>
-<div class="precos">
-<strong>R$ 59,90</strong>
-<div class="controle-produto" data-preco="59.90" data-produto="Poke Salmão + Camarão">
-<button aria-label="Diminuir Poke Salmão + Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Poke Salmão + Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Poke Salmão + Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Poke Salmão + Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de entradas" src="imagens/entradas.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 59,90
+        </strong>
+        <div class="controle-produto" data-preco="59.90" data-produto="Poke Salm&atilde;o + Camar&atilde;o">
+         <button aria-label="Diminuir Poke Salm&atilde;o + Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Poke Salm&atilde;o + Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Poke Salm&atilde;o + Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Poke Salm&atilde;o + Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de entradas" src="imagens/entradas.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          SASHIMI
     ========================== -->
-<section class="secao" id="sashimi">
-<h2>SASHIMI</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Salmão 20g</h3>
-<div class="precos">
-<strong>R$ 5,00</strong>
-<div class="controle-produto" data-preco="5.00" data-produto="Salmão 20g">
-<button aria-label="Diminuir Salmão 20g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salmão 20g', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Salmão 20g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salmão 20g', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<img alt="Salmão" src="imagens/sashimi.PNG"/>
-</article>
-<article class="produto">
-<div class="produto-info">
-<h3>Peixe Branco 20g</h3>
-<div class="precos">
-<strong>R$ 4,50</strong>
-<div class="controle-produto" data-preco="4.50" data-produto="Peixe Branco 20g">
-<button aria-label="Diminuir Peixe Branco 20g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Peixe Branco 20g', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Peixe Branco 20g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Peixe Branco 20g', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Tropical (Maracujá)</h3>
-<div class="precos">
-<strong>R$ 5,00</strong>
-<div class="controle-produto" data-preco="5.00" data-produto="Tropical (Maracujá)">
-<button aria-label="Diminuir Tropical (Maracujá)" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tropical (Maracujá)', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Tropical (Maracujá)" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tropical (Maracujá)', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Toast</h3>
-<div class="precos">
-<strong>R$ 5,00</strong>
-<div class="controle-produto" data-preco="5.00" data-produto="Toast">
-<button aria-label="Diminuir Toast" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Toast', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Toast" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Toast', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="sashimi">
+    <h2>
+     SASHIMI
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Salm&atilde;o 20g
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,00
+        </strong>
+        <div class="controle-produto" data-preco="5.00" data-produto="Salm&atilde;o 20g">
+         <button aria-label="Diminuir Salm&atilde;o 20g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salm&atilde;o 20g', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Salm&atilde;o 20g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salm&atilde;o 20g', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <img alt="Salm&atilde;o" src="imagens/sashimi.jpg"/>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Peixe Branco 20g
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 4,50
+        </strong>
+        <div class="controle-produto" data-preco="4.50" data-produto="Peixe Branco 20g">
+         <button aria-label="Diminuir Peixe Branco 20g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Peixe Branco 20g', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Peixe Branco 20g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Peixe Branco 20g', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Tropical (Maracuj&aacute;)
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,00
+        </strong>
+        <div class="controle-produto" data-preco="5.00" data-produto="Tropical (Maracuj&aacute;)">
+         <button aria-label="Diminuir Tropical (Maracuj&aacute;)" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tropical (Maracuj&aacute;)', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Tropical (Maracuj&aacute;)" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tropical (Maracuj&aacute;)', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Toast
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,00
+        </strong>
+        <div class="controle-produto" data-preco="5.00" data-produto="Toast">
+         <button aria-label="Diminuir Toast" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Toast', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Toast" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Toast', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sashimi" src="imagens/sashimi.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          NIGUIRI
     ========================== -->
-<section class="secao" id="niguiri">
-<h2>NIGUIRI</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Salmão</h3>
-<div class="precos">
-<strong>R$ 5,50</strong>
-<div class="controle-produto" data-preco="5.50" data-produto="Salmão">
-<button aria-label="Diminuir Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<img alt="Niguiri Salmão" src="imagens/niguiri.PNG"/>
-</article>
-<article class="produto">
-<div class="produto-info">
-<h3>Peixe Branco</h3>
-<div class="precos">
-<strong>R$ 3,90</strong>
-<div class="controle-produto" data-preco="3.90" data-produto="Peixe Branco">
-<button aria-label="Diminuir Peixe Branco" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Peixe Branco', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Peixe Branco" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Peixe Branco', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Spice Pimenta</h3>
-<div class="precos">
-<strong>R$ 5,50</strong>
-<div class="controle-produto" data-preco="5.50" data-produto="Spice Pimenta">
-<button aria-label="Diminuir Spice Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Spice Pimenta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Spice Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Spice Pimenta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Toast</h3>
-<div class="precos">
-<strong>R$ 5,50</strong>
-<div class="controle-produto" data-preco="5.50" data-produto="Toast">
-<button aria-label="Diminuir Toast" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Toast', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Toast" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Toast', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Camarão</h3>
-<div class="precos">
-<strong>R$ 5,50</strong>
-<div class="controle-produto" data-preco="5.50" data-produto="Camarão">
-<button aria-label="Diminuir Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Tropical</h3>
-<div class="precos">
-<strong>R$ 5,50</strong>
-<div class="controle-produto" data-preco="5.50" data-produto="Tropical">
-<button aria-label="Diminuir Tropical" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tropical', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Tropical" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tropical', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="niguiri">
+    <h2>
+     NIGUIRI
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Salm&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,50
+        </strong>
+        <div class="controle-produto" data-preco="5.50" data-produto="Salm&atilde;o">
+         <button aria-label="Diminuir Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <img alt="Niguiri Salm&atilde;o" src="imagens/niguiri.jpg"/>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Peixe Branco
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 3,90
+        </strong>
+        <div class="controle-produto" data-preco="3.90" data-produto="Peixe Branco">
+         <button aria-label="Diminuir Peixe Branco" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Peixe Branco', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Peixe Branco" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Peixe Branco', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Spice Pimenta
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,50
+        </strong>
+        <div class="controle-produto" data-preco="5.50" data-produto="Spice Pimenta">
+         <button aria-label="Diminuir Spice Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Spice Pimenta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Spice Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Spice Pimenta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Toast
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,50
+        </strong>
+        <div class="controle-produto" data-preco="5.50" data-produto="Toast">
+         <button aria-label="Diminuir Toast" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Toast', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Toast" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Toast', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,50
+        </strong>
+        <div class="controle-produto" data-preco="5.50" data-produto="Camar&atilde;o">
+         <button aria-label="Diminuir Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Tropical
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 5,50
+        </strong>
+        <div class="controle-produto" data-preco="5.50" data-produto="Tropical">
+         <button aria-label="Diminuir Tropical" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Tropical', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Tropical" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Tropical', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de niguiri" src="imagens/niguiri.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          MAKI HOT
     ========================== -->
-<section class="secao" id="makihot">
-<h2>MAKI HOT</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Filadélfia</h3>
-<div class="precos">
-<strong>R$ 3,30</strong>
-<div class="controle-produto" data-preco="3.30" data-produto="Hot Filadélfia">
-<button aria-label="Diminuir Hot Filadélfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Filadélfia', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Filadélfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Filadélfia', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Tartar</h3>
-<div class="precos">
-<strong>R$ 3,80</strong>
-<div class="controle-produto" data-preco="3.80" data-produto="Hot Tartar">
-<button aria-label="Diminuir Hot Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Tartar', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Tartar', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Camarão 100g</h3>
-<div class="precos">
-<strong>R$ 3,30</strong>
-<div class="controle-produto" data-preco="3.30" data-produto="Hot Camarão 100g">
-<button aria-label="Diminuir Hot Camarão 100g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Camarão 100g', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Camarão 100g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Camarão 100g', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Skin</h3>
-<div class="precos">
-<strong>R$ 2,70</strong>
-<div class="controle-produto" data-preco="2.70" data-produto="Hot Skin">
-<button aria-label="Diminuir Hot Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Skin', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Skin', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Pimenta</h3>
-<p>Com geleia de pimenta.</p>
-<div class="precos">
-<strong>R$ 3,40</strong>
-<div class="controle-produto" data-preco="3.40" data-produto="Hot Pimenta">
-<button aria-label="Diminuir Hot Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Pimenta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Pimenta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Banana com Nutela</h3>
-<div class="precos">
-<strong>R$ 2,90</strong>
-<div class="controle-produto" data-preco="2.90" data-produto="Hot Banana com Nutela">
-<button aria-label="Diminuir Hot Banana com Nutela" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Banana com Nutela', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Banana com Nutela" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Banana com Nutela', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Romeu e Julieta</h3>
-<div class="precos">
-<strong>R$ 2,60</strong>
-<div class="controle-produto" data-preco="2.60" data-produto="Hot Romeu e Julieta">
-<button aria-label="Diminuir Hot Romeu e Julieta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Romeu e Julieta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Romeu e Julieta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Romeu e Julieta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makihot" src="imagens/makihot.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="makihot">
+    <h2>
+     MAKI HOT
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Filad&eacute;lfia
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 3,30
+        </strong>
+        <div class="controle-produto" data-preco="3.30" data-produto="Hot Filad&eacute;lfia">
+         <button aria-label="Diminuir Hot Filad&eacute;lfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Filad&eacute;lfia', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Filad&eacute;lfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Filad&eacute;lfia', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Tartar
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 3,80
+        </strong>
+        <div class="controle-produto" data-preco="3.80" data-produto="Hot Tartar">
+         <button aria-label="Diminuir Hot Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Tartar', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Tartar', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Camar&atilde;o 100g
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 3,30
+        </strong>
+        <div class="controle-produto" data-preco="3.30" data-produto="Hot Camar&atilde;o 100g">
+         <button aria-label="Diminuir Hot Camar&atilde;o 100g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Camar&atilde;o 100g', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Camar&atilde;o 100g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Camar&atilde;o 100g', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Skin
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,70
+        </strong>
+        <div class="controle-produto" data-preco="2.70" data-produto="Hot Skin">
+         <button aria-label="Diminuir Hot Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Skin', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Skin', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Pimenta
+       </h3>
+       <p>
+        Com geleia de pimenta.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 3,40
+        </strong>
+        <div class="controle-produto" data-preco="3.40" data-produto="Hot Pimenta">
+         <button aria-label="Diminuir Hot Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Pimenta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Pimenta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Banana com Nutela
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,90
+        </strong>
+        <div class="controle-produto" data-preco="2.90" data-produto="Hot Banana com Nutela">
+         <button aria-label="Diminuir Hot Banana com Nutela" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Banana com Nutela', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Banana com Nutela" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Banana com Nutela', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Romeu e Julieta
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,60
+        </strong>
+        <div class="controle-produto" data-preco="2.60" data-produto="Hot Romeu e Julieta">
+         <button aria-label="Diminuir Hot Romeu e Julieta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Romeu e Julieta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Romeu e Julieta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Romeu e Julieta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makihot" src="imagens/makihot.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          SOBREMESAS
     ========================== -->
-<section class="secao" id="sobremesas">
-<h2>SOBREMESAS</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Rolinho Primavera 50g</h3>
-<div class="precos">
-<strong>R$ 17,00</strong>
-<div class="controle-produto" data-preco="17.00" data-produto="Rolinho Primavera 50g">
-<button aria-label="Diminuir Rolinho Primavera 50g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Rolinho Primavera 50g', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Rolinho Primavera 50g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Rolinho Primavera 50g', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Salmão 50g</h3>
-<div class="precos">
-<strong>R$ 17,00</strong>
-<div class="controle-produto" data-preco="17.00" data-produto="Salmão 50g">
-<button aria-label="Diminuir Salmão 50g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salmão 50g', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Salmão 50g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salmão 50g', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Camarão</h3>
-<div class="precos">
-<strong>R$ 15,00</strong>
-<div class="controle-produto" data-preco="15.00" data-produto="Camarão">
-<button aria-label="Diminuir Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Nutella com Morango</h3>
-<div class="precos">
-<strong>R$ 15,00</strong>
-<div class="controle-produto" data-preco="15.00" data-produto="Nutella com Morango">
-<button aria-label="Diminuir Nutella com Morango" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Nutella com Morango', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Nutella com Morango" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Nutella com Morango', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Doce de Leite</h3>
-<div class="precos">
-<strong>R$ 15,00</strong>
-<div class="controle-produto" data-preco="15.00" data-produto="Doce de Leite">
-<button aria-label="Diminuir Doce de Leite" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Doce de Leite', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Doce de Leite" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Doce de Leite', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Romeu e Julieta</h3>
-<div class="precos">
-<strong>R$ 15,00</strong>
-<div class="controle-produto" data-preco="15.00" data-produto="Romeu e Julieta">
-<button aria-label="Diminuir Romeu e Julieta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Romeu e Julieta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Romeu e Julieta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Romeu e Julieta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="sobremesas">
+    <h2>
+     SOBREMESAS
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Rolinho Primavera 50g
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 17,00
+        </strong>
+        <div class="controle-produto" data-preco="17.00" data-produto="Rolinho Primavera 50g">
+         <button aria-label="Diminuir Rolinho Primavera 50g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Rolinho Primavera 50g', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Rolinho Primavera 50g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Rolinho Primavera 50g', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Salm&atilde;o 50g
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 17,00
+        </strong>
+        <div class="controle-produto" data-preco="17.00" data-produto="Salm&atilde;o 50g">
+         <button aria-label="Diminuir Salm&atilde;o 50g" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salm&atilde;o 50g', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Salm&atilde;o 50g" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salm&atilde;o 50g', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 15,00
+        </strong>
+        <div class="controle-produto" data-preco="15.00" data-produto="Camar&atilde;o">
+         <button aria-label="Diminuir Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Nutella com Morango
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 15,00
+        </strong>
+        <div class="controle-produto" data-preco="15.00" data-produto="Nutella com Morango">
+         <button aria-label="Diminuir Nutella com Morango" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Nutella com Morango', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Nutella com Morango" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Nutella com Morango', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Doce de Leite
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 15,00
+        </strong>
+        <div class="controle-produto" data-preco="15.00" data-produto="Doce de Leite">
+         <button aria-label="Diminuir Doce de Leite" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Doce de Leite', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Doce de Leite" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Doce de Leite', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Romeu e Julieta
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 15,00
+        </strong>
+        <div class="controle-produto" data-preco="15.00" data-produto="Romeu e Julieta">
+         <button aria-label="Diminuir Romeu e Julieta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Romeu e Julieta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Romeu e Julieta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Romeu e Julieta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de sobremesas" src="imagens/sobremesas.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          URAMAKI
     ========================== -->
-<section class="secao" id="uramaki">
-<h2>URAMAKI</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Uramaki Filadélfia 10 peças</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Uramaki Filadélfia 10 peças">
-<button aria-label="Diminuir Uramaki Filadélfia 10 peças" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Filadélfia 10 peças', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Uramaki Filadélfia 10 peças" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Filadélfia 10 peças', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Uramaki Salmão</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Uramaki Salmão">
-<button aria-label="Diminuir Uramaki Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Uramaki Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Uramaki Camarão</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Uramaki Camarão">
-<button aria-label="Diminuir Uramaki Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Uramaki Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Uramaki Tartar</h3>
-<div class="precos">
-<strong>R$ 3,80</strong>
-<div class="controle-produto" data-preco="3.80" data-produto="Uramaki Tartar">
-<button aria-label="Diminuir Uramaki Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Tartar', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Uramaki Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Tartar', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Uramaki Skin</h3>
-<div class="precos">
-<strong>R$ 2,50</strong>
-<div class="controle-produto" data-preco="2.50" data-produto="Uramaki Skin">
-<button aria-label="Diminuir Uramaki Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Skin', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Uramaki Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Skin', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="uramaki">
+    <h2>
+     URAMAKI
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Uramaki Filad&eacute;lfia 10 pe&ccedil;as
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Uramaki Filad&eacute;lfia 10 pe&ccedil;as">
+         <button aria-label="Diminuir Uramaki Filad&eacute;lfia 10 pe&ccedil;as" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Filad&eacute;lfia 10 pe&ccedil;as', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Uramaki Filad&eacute;lfia 10 pe&ccedil;as" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Filad&eacute;lfia 10 pe&ccedil;as', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Uramaki Salm&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Uramaki Salm&atilde;o">
+         <button aria-label="Diminuir Uramaki Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Uramaki Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Uramaki Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Uramaki Camar&atilde;o">
+         <button aria-label="Diminuir Uramaki Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Uramaki Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Uramaki Tartar
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 3,80
+        </strong>
+        <div class="controle-produto" data-preco="3.80" data-produto="Uramaki Tartar">
+         <button aria-label="Diminuir Uramaki Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Tartar', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Uramaki Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Tartar', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Uramaki Skin
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,50
+        </strong>
+        <div class="controle-produto" data-preco="2.50" data-produto="Uramaki Skin">
+         <button aria-label="Diminuir Uramaki Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Uramaki Skin', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Uramaki Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Uramaki Skin', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de uramaki" src="imagens/uramaki.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          MAKIMONO
     ========================== -->
-<section class="secao" id="makimono">
-<h2>MAKIMONO 10 PEÇAS</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Maki Filadélfia</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Maki Filadélfia">
-<button aria-label="Diminuir Maki Filadélfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Filadélfia', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Maki Filadélfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Filadélfia', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makimono" src="imagens/makimono.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Maki Salmão</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Maki Salmão">
-<button aria-label="Diminuir Maki Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Maki Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makimono" src="imagens/makimono.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Maki Camarão</h3>
-<div class="precos">
-<strong>R$ 2,80</strong>
-<div class="controle-produto" data-preco="2.80" data-produto="Maki Camarão">
-<button aria-label="Diminuir Maki Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Maki Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makimono" src="imagens/makimono.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Maki Skin</h3>
-<div class="precos">
-<strong>R$ 2,50</strong>
-<div class="controle-produto" data-preco="2.50" data-produto="Maki Skin">
-<button aria-label="Diminuir Maki Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Skin', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Maki Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Skin', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de makimono" src="imagens/makimono.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="makimono">
+    <h2>
+     MAKIMONO 10 PE&Ccedil;AS
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Maki Filad&eacute;lfia
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Maki Filad&eacute;lfia">
+         <button aria-label="Diminuir Maki Filad&eacute;lfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Filad&eacute;lfia', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Maki Filad&eacute;lfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Filad&eacute;lfia', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makimono" src="imagens/makimono.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Maki Salm&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Maki Salm&atilde;o">
+         <button aria-label="Diminuir Maki Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Maki Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makimono" src="imagens/makimono.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Maki Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,80
+        </strong>
+        <div class="controle-produto" data-preco="2.80" data-produto="Maki Camar&atilde;o">
+         <button aria-label="Diminuir Maki Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Maki Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makimono" src="imagens/makimono.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Maki Skin
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 2,50
+        </strong>
+        <div class="controle-produto" data-preco="2.50" data-produto="Maki Skin">
+         <button aria-label="Diminuir Maki Skin" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Maki Skin', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Maki Skin" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Maki Skin', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de makimono" src="imagens/makimono.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          SALMÃO ICE
     ========================== -->
-<section class="secao" id="salmaoice">
-<h2>SALMÃO ICE</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Amora</h3>
-<div class="precos"><strong>R$ 6,50</strong>
-<div class="controle-produto" data-preco="6.50" data-produto="Ice Amora">
-<button aria-label="Diminuir Ice Amora" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Amora', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Amora" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Amora', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Tartar</h3>
-<div class="precos"><strong>R$ 7,00</strong>
-<div class="controle-produto" data-preco="7.00" data-produto="Ice Tartar">
-<button aria-label="Diminuir Ice Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tartar', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tartar', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Tartar Camarão</h3>
-<div class="precos"><strong>R$ 7,00</strong>
-<div class="controle-produto" data-preco="7.00" data-produto="Ice Tartar Camarão">
-<button aria-label="Diminuir Ice Tartar Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tartar Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Tartar Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tartar Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Premium</h3>
-<p>Alho poró.</p>
-<div class="precos"><strong>R$ 6,50</strong>
-<div class="controle-produto" data-preco="6.50" data-produto="Ice Premium">
-<button aria-label="Diminuir Ice Premium" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Premium', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Premium" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Premium', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Tropical</h3>
-<div class="precos"><strong>R$ 6,50</strong>
-<div class="controle-produto" data-preco="6.50" data-produto="Ice Tropical">
-<button aria-label="Diminuir Ice Tropical" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tropical', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Tropical" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tropical', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Pimenta</h3>
-<div class="precos"><strong>R$ 6,50</strong>
-<div class="controle-produto" data-preco="6.50" data-produto="Ice Pimenta">
-<button aria-label="Diminuir Ice Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Pimenta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Pimenta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Flambado Tartar</h3>
-<div class="precos"><strong>R$ 6,50</strong>
-<div class="controle-produto" data-preco="6.50" data-produto="Ice Flambado Tartar">
-<button aria-label="Diminuir Ice Flambado Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Flambado Tartar', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Flambado Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Flambado Tartar', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Ice Especial Salmão com Camarão Empanado</h3>
-<div class="precos"><strong>R$ 7,90</strong>
-<div class="controle-produto" data-preco="7.90" data-produto="Ice Especial Salmão com Camarão Empanado">
-<button aria-label="Diminuir Ice Especial Salmão com Camarão Empanado" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Especial Salmão com Camarão Empanado', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Ice Especial Salmão com Camarão Empanado" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Especial Salmão com Camarão Empanado', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="salmaoice">
+    <h2>
+     SALM&Atilde;O ICE
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Amora
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 6,50
+        </strong>
+        <div class="controle-produto" data-preco="6.50" data-produto="Ice Amora">
+         <button aria-label="Diminuir Ice Amora" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Amora', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Amora" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Amora', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Tartar
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 7,00
+        </strong>
+        <div class="controle-produto" data-preco="7.00" data-produto="Ice Tartar">
+         <button aria-label="Diminuir Ice Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tartar', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tartar', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Tartar Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 7,00
+        </strong>
+        <div class="controle-produto" data-preco="7.00" data-produto="Ice Tartar Camar&atilde;o">
+         <button aria-label="Diminuir Ice Tartar Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tartar Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Tartar Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tartar Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Premium
+       </h3>
+       <p>
+        Alho por&oacute;.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 6,50
+        </strong>
+        <div class="controle-produto" data-preco="6.50" data-produto="Ice Premium">
+         <button aria-label="Diminuir Ice Premium" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Premium', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Premium" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Premium', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Tropical
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 6,50
+        </strong>
+        <div class="controle-produto" data-preco="6.50" data-produto="Ice Tropical">
+         <button aria-label="Diminuir Ice Tropical" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Tropical', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Tropical" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Tropical', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Pimenta
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 6,50
+        </strong>
+        <div class="controle-produto" data-preco="6.50" data-produto="Ice Pimenta">
+         <button aria-label="Diminuir Ice Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Pimenta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Pimenta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Flambado Tartar
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 6,50
+        </strong>
+        <div class="controle-produto" data-preco="6.50" data-produto="Ice Flambado Tartar">
+         <button aria-label="Diminuir Ice Flambado Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Flambado Tartar', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Flambado Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Flambado Tartar', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Ice Especial Salm&atilde;o com Camar&atilde;o Empanado
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 7,90
+        </strong>
+        <div class="controle-produto" data-preco="7.90" data-produto="Ice Especial Salm&atilde;o com Camar&atilde;o Empanado">
+         <button aria-label="Diminuir Ice Especial Salm&atilde;o com Camar&atilde;o Empanado" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Ice Especial Salm&atilde;o com Camar&atilde;o Empanado', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Ice Especial Salm&atilde;o com Camar&atilde;o Empanado" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Ice Especial Salm&atilde;o com Camar&atilde;o Empanado', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de salmaoice" src="imagens/salmaoice.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          JOYS
     ========================== -->
-<section class="secao" id="joys">
-<h2>JOYS ESPECIAIS</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Joy com Geleia de Amora</h3>
-<div class="precos"><strong>R$ 4,70</strong>
-<div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Amora">
-<button aria-label="Diminuir Joy com Geleia de Amora" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Amora', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Joy com Geleia de Amora" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Amora', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de joys" src="imagens/joys.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Joy com Geleia de Pimenta</h3>
-<div class="precos"><strong>R$ 4,70</strong>
-<div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Pimenta">
-<button aria-label="Diminuir Joy com Geleia de Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Pimenta', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Joy com Geleia de Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Pimenta', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de joys" src="imagens/joys.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Joy de Tartar</h3>
-<div class="precos"><strong>R$ 4,80</strong>
-<div class="controle-produto" data-preco="4.80" data-produto="Joy de Tartar">
-<button aria-label="Diminuir Joy de Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy de Tartar', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Joy de Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy de Tartar', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de joys" src="imagens/joys.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Joy com Geleia de Pimenta e Cebola Crisp</h3>
-<div class="precos"><strong>R$ 4,70</strong>
-<div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Pimenta e Cebola Crisp">
-<button aria-label="Diminuir Joy com Geleia de Pimenta e Cebola Crisp" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Pimenta e Cebola Crisp', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Joy com Geleia de Pimenta e Cebola Crisp" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Pimenta e Cebola Crisp', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de joys" src="imagens/joys.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="joys">
+    <h2>
+     JOYS ESPECIAIS
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Joy com Geleia de Amora
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 4,70
+        </strong>
+        <div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Amora">
+         <button aria-label="Diminuir Joy com Geleia de Amora" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Amora', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Joy com Geleia de Amora" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Amora', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de joys" src="imagens/joys.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Joy com Geleia de Pimenta
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 4,70
+        </strong>
+        <div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Pimenta">
+         <button aria-label="Diminuir Joy com Geleia de Pimenta" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Pimenta', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Joy com Geleia de Pimenta" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Pimenta', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de joys" src="imagens/joys.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Joy de Tartar
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 4,80
+        </strong>
+        <div class="controle-produto" data-preco="4.80" data-produto="Joy de Tartar">
+         <button aria-label="Diminuir Joy de Tartar" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy de Tartar', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Joy de Tartar" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy de Tartar', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de joys" src="imagens/joys.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Joy com Geleia de Pimenta e Cebola Crisp
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 4,70
+        </strong>
+        <div class="controle-produto" data-preco="4.70" data-produto="Joy com Geleia de Pimenta e Cebola Crisp">
+         <button aria-label="Diminuir Joy com Geleia de Pimenta e Cebola Crisp" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Joy com Geleia de Pimenta e Cebola Crisp', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Joy com Geleia de Pimenta e Cebola Crisp" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Joy com Geleia de Pimenta e Cebola Crisp', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de joys" src="imagens/joys.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          TEMAKI
     ========================== -->
-<section class="secao" id="temaki">
-<h2>TEMAKI</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Filadélfia</h3>
-<div class="precos"><strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Filadélfia">
-<button aria-label="Diminuir Filadélfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Filadélfia', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Filadélfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Filadélfia', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<img alt="Temaki Filadélfia" src="imagens/temaki.PNG"/>
-</article>
-<article class="produto">
-<div class="produto-info">
-<h3>Salmão</h3>
-<div class="precos"><strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Salmão">
-<button aria-label="Diminuir Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temaki" src="imagens/temaki.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Camarão Filadélfia</h3>
-<div class="precos"><strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Camarão Filadélfia">
-<button aria-label="Diminuir Camarão Filadélfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camarão Filadélfia', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Camarão Filadélfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camarão Filadélfia', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temaki" src="imagens/temaki.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="temaki">
+    <h2>
+     TEMAKI
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Filad&eacute;lfia
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Filad&eacute;lfia">
+         <button aria-label="Diminuir Filad&eacute;lfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Filad&eacute;lfia', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Filad&eacute;lfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Filad&eacute;lfia', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <img alt="Temaki Filad&eacute;lfia" src="imagens/temaki.jpg"/>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Salm&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Salm&atilde;o">
+         <button aria-label="Diminuir Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temaki" src="imagens/temaki.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Camar&atilde;o Filad&eacute;lfia
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Camar&atilde;o Filad&eacute;lfia">
+         <button aria-label="Diminuir Camar&atilde;o Filad&eacute;lfia" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camar&atilde;o Filad&eacute;lfia', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Camar&atilde;o Filad&eacute;lfia" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camar&atilde;o Filad&eacute;lfia', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temaki" src="imagens/temaki.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          TEMAKI HOT
     ========================== -->
-<section class="secao" id="temakihot">
-<h2>TEMAKI HOT</h2>
-<div class="produtos">
-<article class="produto">
-<div class="produto-info">
-<h3>Hot Fila</h3>
-<div class="precos"><strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Hot Fila">
-<button aria-label="Diminuir Hot Fila" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Fila', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Hot Fila" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Fila', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Camarão</h3>
-<div class="precos"><strong>R$ 39,90</strong>
-<div class="controle-produto" data-preco="39.90" data-produto="Camarão">
-<button aria-label="Diminuir Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Misto</h3>
-<div class="precos"><strong>R$ 43,00</strong>
-<div class="controle-produto" data-preco="43.00" data-produto="Misto">
-<button aria-label="Diminuir Misto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Misto', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Misto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Misto', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Mini Temaki Salmão</h3>
-<p>Unid. sem fritar.</p>
-<div class="precos"><strong>R$ 12,70</strong>
-<div class="controle-produto" data-preco="12.70" data-produto="Mini Temaki Salmão">
-<button aria-label="Diminuir Mini Temaki Salmão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Salmão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Mini Temaki Salmão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Salmão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Mini Temaki Fila</h3>
-<div class="precos"><strong>R$ 9,90</strong>
-<div class="controle-produto" data-preco="9.90" data-produto="Mini Temaki Fila">
-<button aria-label="Diminuir Mini Temaki Fila" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Fila', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Mini Temaki Fila" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Fila', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Mini Temaki Camarão</h3>
-<div class="precos"><strong>R$ 10,80</strong>
-<div class="controle-produto" data-preco="10.80" data-produto="Mini Temaki Camarão">
-<button aria-label="Diminuir Mini Temaki Camarão" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Camarão', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Mini Temaki Camarão" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Camarão', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-<article class="produto">
-<div class="produto-info">
-<h3>Temaki Aberto</h3>
-<p>Cream cheese em cima.</p>
-<div class="precos"><strong>R$ 43,00</strong>
-<div class="controle-produto" data-preco="43.00" data-produto="Temaki Aberto">
-<button aria-label="Diminuir Temaki Aberto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Temaki Aberto', -1)" type="button">−</button>
-<span class="qtd-produto">0</span>
-<button aria-label="Adicionar Temaki Aberto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Temaki Aberto', 1)" type="button">+</button>
-</div>
-</div>
-</div>
-<div class="produto-imagem"><img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.svg"/></div></article>
-</div>
-</section>
-<!-- =========================
+   <section class="secao" id="temakihot">
+    <h2>
+     TEMAKI HOT
+    </h2>
+    <div class="produtos">
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Hot Fila
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Hot Fila">
+         <button aria-label="Diminuir Hot Fila" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Hot Fila', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Hot Fila" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Hot Fila', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 39,90
+        </strong>
+        <div class="controle-produto" data-preco="39.90" data-produto="Camar&atilde;o">
+         <button aria-label="Diminuir Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Misto
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 43,00
+        </strong>
+        <div class="controle-produto" data-preco="43.00" data-produto="Misto">
+         <button aria-label="Diminuir Misto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Misto', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Misto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Misto', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Mini Temaki Salm&atilde;o
+       </h3>
+       <p>
+        Unid. sem fritar.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 12,70
+        </strong>
+        <div class="controle-produto" data-preco="12.70" data-produto="Mini Temaki Salm&atilde;o">
+         <button aria-label="Diminuir Mini Temaki Salm&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Salm&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Mini Temaki Salm&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Salm&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Mini Temaki Fila
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 9,90
+        </strong>
+        <div class="controle-produto" data-preco="9.90" data-produto="Mini Temaki Fila">
+         <button aria-label="Diminuir Mini Temaki Fila" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Fila', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Mini Temaki Fila" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Fila', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Mini Temaki Camar&atilde;o
+       </h3>
+       <div class="precos">
+        <strong>
+         R$ 10,80
+        </strong>
+        <div class="controle-produto" data-preco="10.80" data-produto="Mini Temaki Camar&atilde;o">
+         <button aria-label="Diminuir Mini Temaki Camar&atilde;o" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Mini Temaki Camar&atilde;o', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Mini Temaki Camar&atilde;o" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Mini Temaki Camar&atilde;o', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+     <article class="produto">
+      <div class="produto-info">
+       <h3>
+        Temaki Aberto
+       </h3>
+       <p>
+        Cream cheese em cima.
+       </p>
+       <div class="precos">
+        <strong>
+         R$ 43,00
+        </strong>
+        <div class="controle-produto" data-preco="43.00" data-produto="Temaki Aberto">
+         <button aria-label="Diminuir Temaki Aberto" class="btn-quantidade btn-menos" onclick="alterarProdutoCard('Temaki Aberto', -1)" type="button">
+          &minus;
+         </button>
+         <span class="qtd-produto">
+          0
+         </span>
+         <button aria-label="Adicionar Temaki Aberto" class="btn-quantidade btn-mais" onclick="alterarProdutoCard('Temaki Aberto', 1)" type="button">
+          +
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="produto-imagem">
+       <img alt="Imagem ilustrativa de temakihot" src="imagens/temakihot.jpg"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- =========================
          MONTE SEU POKE
     ========================= -->
-<section class="secao" id="montar-poke">
-<h2>🥗 MONTE SEU POKE</h2>
-<div class="poke-container">
-<p class="poke-descricao">
-                    Monte seu poke escolhendo os ingredientes. O valor é calculado automaticamente.
-                </p>
-<div class="poke-item">
-<div>
-<h3>Salmão</h3>
-<p>R$ 10,00</p>
-</div>
-<div class="quantidade-poke">
-<button onclick="alterarPoke('Salmão', 10, -1)" type="button">−</button>
-<span id="qtd-Salmão">0</span>
-<button onclick="alterarPoke('Salmão', 10, 1)" type="button">+</button>
-</div>
-</div>
-<div class="poke-item">
-<div>
-<h3>Camarão</h3>
-<p>R$ 12,00</p>
-</div>
-<div class="quantidade-poke">
-<button onclick="alterarPoke('Camarão', 12, -1)" type="button">−</button>
-<span id="qtd-Camarão">0</span>
-<button onclick="alterarPoke('Camarão', 12, 1)" type="button">+</button>
-</div>
-</div>
-<div class="poke-item">
-<div>
-<h3>Cream Cheese</h3>
-<p>R$ 5,00</p>
-</div>
-<div class="quantidade-poke">
-<button onclick="alterarPoke('Cream Cheese', 5, -1)" type="button">−</button>
-<span id="qtd-Cream Cheese">0</span>
-<button onclick="alterarPoke('Cream Cheese', 5, 1)" type="button">+</button>
-</div>
-</div>
-<div class="poke-total">
-<span>Total do Poke</span>
-<strong id="totalPoke">R$ 0,00</strong>
-</div>
-<button class="poke-adicionar" onclick="adicionarPokeAoCarrinho()" type="button">
-                    🛒 Adicionar Poke ao carrinho
-                </button>
-</div>
-</section>
-</main>
-<!-- =========================
+   <section class="secao" id="montar-poke">
+    <h2>
+     🥗 MONTE SEU POKE
+    </h2>
+    <div class="poke-container">
+     <p class="poke-descricao">
+      Monte seu poke escolhendo os ingredientes. O valor &eacute; calculado automaticamente.
+     </p>
+     <div class="poke-item">
+      <div>
+       <h3>
+        Salm&atilde;o
+       </h3>
+       <p>
+        R$ 10,00
+       </p>
+      </div>
+      <div class="quantidade-poke">
+       <button onclick="alterarPoke('Salm&atilde;o', 10, -1)" type="button">
+        &minus;
+       </button>
+       <span id="qtd-Salm&atilde;o">
+        0
+       </span>
+       <button onclick="alterarPoke('Salm&atilde;o', 10, 1)" type="button">
+        +
+       </button>
+      </div>
+     </div>
+     <div class="poke-item">
+      <div>
+       <h3>
+        Camar&atilde;o
+       </h3>
+       <p>
+        R$ 12,00
+       </p>
+      </div>
+      <div class="quantidade-poke">
+       <button onclick="alterarPoke('Camar&atilde;o', 12, -1)" type="button">
+        &minus;
+       </button>
+       <span id="qtd-Camar&atilde;o">
+        0
+       </span>
+       <button onclick="alterarPoke('Camar&atilde;o', 12, 1)" type="button">
+        +
+       </button>
+      </div>
+     </div>
+     <div class="poke-item">
+      <div>
+       <h3>
+        Cream Cheese
+       </h3>
+       <p>
+        R$ 5,00
+       </p>
+      </div>
+      <div class="quantidade-poke">
+       <button onclick="alterarPoke('Cream Cheese', 5, -1)" type="button">
+        &minus;
+       </button>
+       <span id="qtd-Cream Cheese">
+        0
+       </span>
+       <button onclick="alterarPoke('Cream Cheese', 5, 1)" type="button">
+        +
+       </button>
+      </div>
+     </div>
+     <div class="poke-total">
+      <span>
+       Total do Poke
+      </span>
+      <strong id="totalPoke">
+       R$ 0,00
+      </strong>
+     </div>
+     <button class="poke-adicionar" onclick="adicionarPokeAoCarrinho()" type="button">
+      🛒 Adicionar Poke ao carrinho
+     </button>
+    </div>
+   </section>
+  </main>
+  <!-- =========================
          MENU INFERIOR
     ========================== -->
-<footer class="menu-inferior">
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-            🏠
-            <span>Início</span>
-</button>
-<button onclick="abrirCarrinho()">
-            🛒
-            <span>Carrinho</span>
-</button>
-<button onclick="mostrarMenu()">
-            ☰
-            <span>Menu</span>
-</button>
-</footer>
-<!-- WHATSAPP -->
-<a aria-label="Falar com o restaurante" class="whatsapp" href="https://wa.me/5522998953298" target="_blank">
-        💬
-    </a>
-<!-- =========================
+  <footer class="menu-inferior">
+   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    🏠
+    <span>
+     In&iacute;cio
+    </span>
+   </button>
+   <button onclick="abrirCarrinho()">
+    🛒
+    <span>
+     Carrinho
+    </span>
+   </button>
+   <button onclick="mostrarMenu()">
+    ☰
+    <span>
+     Menu
+    </span>
+   </button>
+  </footer>
+  <!-- WHATSAPP -->
+  <a aria-label="Falar com o restaurante" class="whatsapp" href="https://wa.me/5522998168216" target="_blank">
+   💬
+  </a>
+  <!-- =========================
          CARRINHO
     ========================== -->
-<div class="carrinho-modal" id="carrinhoModal">
-<div class="carrinho">
-<button class="fechar-carrinho" onclick="fecharCarrinho()">
-                ×
-            </button>
-<h2>🛒 Seu pedido</h2>
-<div id="itensCarrinho"></div>
-<div class="total-carrinho">
-<span>Total:</span>
-<strong id="totalCarrinho">
-                    R$ 0,00
-                </strong>
-</div>
-<div class="pagamento">
-<h3>Forma de pagamento</h3>
-<label>
-<input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Dinheiro"/>
-                    💵 Dinheiro
-                </label>
-<label>
-<input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Pix"/>
-                    📱 Pix
-                </label>
-<label>
-<input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Cartão"/>
-                    💳 Cartão
-                </label>
-</div>
-<div class="troco-area" id="trocoArea">
-<label>
-                    Troco para quanto?
-                </label>
-<input id="valorDinheiro" oninput="calcularTroco()" placeholder="Ex: 100" step="0.01" type="number"/>
-<p id="valorTroco"></p>
-</div>
-<button class="finalizar" onclick="finalizarPedido()">
-
-                Enviar pedido pelo WhatsApp
-
-            </button>
-</div>
-</div>
-<script src="script.js"></script>
-</body>
+  <div class="carrinho-modal" id="carrinhoModal">
+   <div class="carrinho">
+    <button class="fechar-carrinho" onclick="fecharCarrinho()">
+     &times;
+    </button>
+    <h2>
+     🛒 Seu pedido
+    </h2>
+    <div id="itensCarrinho">
+    </div>
+    <div class="total-carrinho">
+     <span>
+      Total:
+     </span>
+     <strong id="totalCarrinho">
+      R$ 0,00
+     </strong>
+    </div>
+    <div class="pagamento">
+     <h3>
+      Forma de pagamento
+     </h3>
+     <label>
+      <input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Dinheiro"/>
+      💵 Dinheiro
+     </label>
+     <label>
+      <input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Pix"/>
+      📱 Pix
+     </label>
+     <label>
+      <input name="pagamento" onchange="selecionarPagamento(this.value)" type="radio" value="Cart&atilde;o"/>
+      💳 Cart&atilde;o
+     </label>
+    </div>
+    <div class="troco-area" id="trocoArea">
+     <label>
+      Troco para quanto?
+     </label>
+     <input id="valorDinheiro" oninput="calcularTroco()" placeholder="Ex: 100" step="0.01" type="number"/>
+     <p id="valorTroco">
+     </p>
+    </div>
+    <button class="finalizar" onclick="finalizarPedido()">
+     Enviar pedido pelo WhatsApp
+    </button>
+   </div>
+  </div>
+  <script src="script.js">
+  </script>
+ </body>
 </html>
