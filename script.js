@@ -227,7 +227,7 @@ function finalizarPedido() {
         mensagem += `%0A💵 Troco: R$ ${troco.toFixed(2).replace('.', ',')}`;
     }
 
-    const numero = "5522998168216";
+    const numero = "5522998953298";
     window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
 }
 
