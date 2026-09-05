@@ -69,6 +69,8 @@ function atualizarCarrinho() {
 
                 <h4>${produto.nome}</h4>
 
+                ${produto.detalhes ? `<small style="display:block;color:#aaa397;margin-bottom:6px;line-height:1.4;">${produto.detalhes}</small>` : ""}
+
                 <p>
                     R$ ${subtotal.toFixed(2).replace(".", ",")}
                 </p>
@@ -265,6 +267,10 @@ function finalizarPedido() {
         mensagem +=
             `${produto.quantidade}x ${produto.nome} - R$ ${subtotal.toFixed(2).replace(".", ",")}%0A`;
 
+        if (produto.detalhes) {
+            mensagem += `   Ingredientes: ${produto.detalhes}%0A`;
+        }
+
     });
 
     mensagem +=
@@ -347,3 +353,84 @@ campoPesquisa.addEventListener("input", function () {
     });
 
 });
+
+/* =====================================================
+   MONTE SEU POKE
+===================================================== */
+
+const pokeItens = {
+    "Salmão": { preco: 10, quantidade: 0 },
+    "Camarão": { preco: 12, quantidade: 0 },
+    "Cream Cheese": { preco: 5, quantidade: 0 }
+};
+
+function alterarPoke(nome, preco, valor) {
+    if (!pokeItens[nome]) {
+        pokeItens[nome] = { preco: preco, quantidade: 0 };
+    }
+
+    pokeItens[nome].quantidade += valor;
+
+    if (pokeItens[nome].quantidade < 0) {
+        pokeItens[nome].quantidade = 0;
+    }
+
+    const elemento = document.getElementById("qtd-" + nome);
+    if (elemento) {
+        elemento.textContent = pokeItens[nome].quantidade;
+    }
+
+    atualizarTotalPoke();
+}
+
+function calcularTotalPoke() {
+    return Object.values(pokeItens).reduce((total, item) => {
+        return total + (item.preco * item.quantidade);
+    }, 0);
+}
+
+function atualizarTotalPoke() {
+    const total = calcularTotalPoke();
+    const elemento = document.getElementById("totalPoke");
+
+    if (elemento) {
+        elemento.textContent = "R$ " + total.toFixed(2).replace(".", ",");
+    }
+}
+
+function adicionarPokeAoCarrinho() {
+    const total = calcularTotalPoke();
+
+    if (total <= 0) {
+        alert("Escolha pelo menos um ingrediente para montar seu Poke.");
+        return;
+    }
+
+    const itens = Object.entries(pokeItens)
+        .filter(([nome, item]) => item.quantidade > 0)
+        .map(([nome, item]) => `${item.quantidade}x ${nome}`)
+        .join(", ");
+
+    const nomePoke = "Poke Personalizado";
+    const existente = carrinho.find(item => item.nome === nomePoke && item.tipo === "poke");
+
+    // Cada configuração é adicionada como um item próprio para não misturar ingredientes.
+    carrinho.push({
+        nome: nomePoke,
+        preco: total,
+        quantidade: 1,
+        tipo: "poke",
+        detalhes: itens
+    });
+
+    atualizarCarrinho();
+
+    alert("Poke adicionado ao carrinho!");
+
+    Object.values(pokeItens).forEach(item => item.quantidade = 0);
+    Object.keys(pokeItens).forEach(nome => {
+        const elemento = document.getElementById("qtd-" + nome);
+        if (elemento) elemento.textContent = "0";
+    });
+    atualizarTotalPoke();
+}

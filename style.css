@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 
 /* =====================================================
@@ -373,25 +373,42 @@ body {
    BOTÃO +
 ===================================================== */
 
+/* =========================================
+   BOTÃO ADICIONAR AO CARRINHO
+========================================= */
+
 .adicionar {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    width: 38px;
-    height: 38px;
-    border: 1px solid #e0b84f;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background: #c99d3d;
+    border: 2px solid #b88c32;
+    background: #c69b3c;
     color: #080808;
-    font-size: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    transition: 0.2s;
+    flex-shrink: 0;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
+
+    /* PASSOU O MOUSE */
+
     .adicionar:hover {
-        background: #e3c56d;
+        background: #e0bf66;
+        border-color: #e0bf66;
         transform: scale(1.08);
+    }
+
+
+    /* CLICOU */
+
+    .adicionar:active {
+        transform: scale(0.92);
     }
 
 
@@ -685,6 +702,12 @@ body {
 
 @media (max-width: 600px) {
 
+    .adicionar {
+        width: 50px;
+        height: 50px;
+        font-size: 29px;
+    }
+
     .logo span {
         font-size: 39px;
     }
@@ -736,263 +759,570 @@ body {
     }
 }
 
-/* ========================================
-   MONTE SEU POKE
-   MESMO ESTILO DOS PRODUTOS
-======================================== */
+/* =====================================================
+   MONTAR SEU POKE
+===================================================== */
 
-#poke {
-    background: transparent;
-    color: white;
+.poke-container {
+    background: linear-gradient(145deg, #121212, #0b0b0b);
+    border: 1px solid #5c4720;
+    border-radius: 6px;
+    padding: 22px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+    .poke-container h3 {
+        margin: 0 0 8px;
+        color: #e0c16b;
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+    }
+
+.poke-descricao {
+    margin-bottom: 22px;
+    color: #99948a;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 
-    /* TÍTULO PRINCIPAL */
+/* TÍTULOS DAS ETAPAS */
 
-    #poke > h2 {
-        color: #fff200;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 25px;
-        border-bottom: 2px solid #d6b400;
-        padding-bottom: 10px;
+.poke-etapa {
+    margin-bottom: 25px;
+}
+
+    .poke-etapa h4 {
+        margin: 0 0 12px;
+        padding-bottom: 8px;
+        color: #d9b65c;
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        border-bottom: 1px solid #40351d;
     }
 
-
-        /* LINHA DOURADA ABAIXO DO TÍTULO */
-
-        #poke > h2::after {
-            content: "";
-            display: block;
-            width: 120px;
-            height: 4px;
-            background: #fff200;
-            margin-top: 8px;
+        .poke-etapa h4 span {
+            color: #777268;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
         }
 
 
-/* CONTAINER */
+/* OPÇÕES */
 
-.montar-poke {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.poke-opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
-
-
-/* ========================================
-   CADA GRUPO
-======================================== */
-
-.poke-grupo {
-    background: #151515;
-    border: 2px solid #b99a32;
-    border-radius: 5px;
-    padding: 22px;
-    box-shadow: none;
-}
-
-
-/* ========================================
-   TÍTULO DO GRUPO
-======================================== */
-
-.poke-titulo {
-    margin-bottom: 18px;
-}
-
-    .poke-titulo h3 {
-        margin: 0;
-        color: #ffffff;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 21px;
-        font-weight: bold;
-    }
-
-    .poke-titulo small {
-        display: block;
-        margin-top: 6px;
-        color: #dddddd;
-        font-size: 14px;
-    }
-
-
-/* ========================================
-   OPÇÕES
-======================================== */
 
 .poke-opcao {
+    position: relative;
     display: flex;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
-    margin-top: 9px;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 14px;
     background: #151515;
-    border: 1px solid #5e522d;
+    border: 1px solid #3e321d;
     border-radius: 4px;
+    color: #eee4d2;
     cursor: pointer;
     transition: 0.2s;
 }
 
-
-    /* PASSAR O MOUSE */
-
     .poke-opcao:hover {
-        border-color: #d6b400;
-        background: #1a222a;
+        border-color: #b18a35;
+        background: #1b1811;
+        transform: translateY(-1px);
     }
 
 
-    /* ========================================
-   TEXTO DAS OPÇÕES
-======================================== */
+/* TEXTO DA OPÇÃO */
 
-    .poke-opcao span {
-        display: flex;
-        flex-direction: column;
-        margin-left: 12px;
-        gap: 4px;
-    }
+.poke-opcao-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
 
-    .poke-opcao strong {
-        color: #ffffff;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 16px;
-    }
+.poke-opcao-nome {
+    color: #eee4d2;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-    .poke-opcao small {
-        color: #fff200;
-        font-size: 14px;
-        font-weight: bold;
-    }
+.poke-opcao-preco {
+    color: #c99d3d;
+    font-size: 12px;
+}
 
 
-    /* ========================================
-   RADIO / CHECKBOX
-======================================== */
+/* CHECKBOX */
 
-    .poke-opcao input {
-        width: 18px;
-        height: 18px;
-        accent-color: #fff200;
-        cursor: pointer;
-    }
+.poke-opcao input {
+    width: 18px;
+    height: 18px;
+    accent-color: #c69b3c;
+    cursor: pointer;
+}
 
 
-    /* ========================================
-   OPÇÃO SELECIONADA
-======================================== */
+/* OPÇÃO SELECIONADA */
 
-    .poke-opcao:has(input:checked) {
-        background: #1c2024;
-        border: 2px solid #fff200;
+.poke-opcao:has(input:checked) {
+    background: #211c12;
+    border-color: #c69b3c;
+    box-shadow: inset 0 0 0 1px rgba(198, 155, 60, 0.25);
+}
+
+    .poke-opcao:has(input:checked) .poke-opcao-nome {
+        color: #f0d58b;
     }
 
 
-/* ========================================
-   RESUMO DO POKE
-======================================== */
+/* RESUMO DO POKE */
 
 .poke-resumo {
-    background: #151515;
-    border: 2px solid #b99a32;
-    border-radius: 5px;
-    padding: 22px;
-    color: white;
+    margin-top: 25px;
+    padding: 18px;
+    background: #18150f;
+    border: 1px solid #5b4720;
+    border-radius: 4px;
 }
 
-    .poke-resumo h3 {
-        margin-top: 0;
-        color: #ffffff;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 22px;
+    .poke-resumo h4 {
+        margin: 0 0 12px;
+        color: #d9b65c;
+        font-family: 'Playfair Display', serif;
+        font-size: 19px;
+    }
+
+    .poke-resumo p {
+        margin: 6px 0;
+        color: #aaa397;
+        font-size: 13px;
+    }
+
+    .poke-resumo strong {
+        color: #e1bd63;
     }
 
 
-/* RESUMO DOS INGREDIENTES */
-
-#resumoPoke {
-    color: #eeeeee;
-    font-size: 15px;
-    line-height: 1.7;
-    min-height: 30px;
-}
-
-
-/* ========================================
-   TOTAL
-======================================== */
+/* TOTAL DO POKE */
 
 .poke-total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid #8c7427;
+    border-top: 1px solid #4d3b1d;
 }
 
     .poke-total span {
-        color: #ffffff;
-        font-size: 17px;
-        font-weight: bold;
+        color: #bdb5a7;
+        font-size: 15px;
     }
 
     .poke-total strong {
-        color: #fff200;
-        font-size: 24px;
-        font-weight: bold;
+        color: #e4c46d;
+        font-size: 23px;
     }
 
 
-/* ========================================
-   BOTÃO ADICIONAR AO CARRINHO
-======================================== */
+/* BOTÃO ADICIONAR POKE */
 
-.botao-poke {
+.poke-adicionar {
     width: 100%;
-    padding: 17px;
-    background: #151c23;
-    color: #ffffff;
-    border: 2px solid #d6b400;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
+    margin-top: 18px;
+    padding: 15px;
+    border: 1px solid #dfb84e;
+    border-radius: 3px;
+    background: #c69b3c;
+    color: #080808;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.2s;
 }
 
-    .botao-poke:hover {
-        background: #252c32;
-        color: #fff200;
-    }
-
-    .botao-poke:active {
-        transform: scale(0.98);
+    .poke-adicionar:hover {
+        background: #e2c26b;
+        transform: translateY(-1px);
     }
 
 
-/* ========================================
-   CELULAR
-======================================== */
+/* =====================================================
+   POKE NO CELULAR
+===================================================== */
 
 @media (max-width: 600px) {
 
-    #poke > h2 {
-        font-size: 26px;
+    .poke-container {
+        padding: 16px;
     }
 
-    .poke-grupo {
-        padding: 17px;
-    }
-
-    .poke-titulo h3 {
-        font-size: 18px;
+    .poke-opcoes {
+        grid-template-columns: 1fr;
     }
 
     .poke-opcao {
-        padding: 13px;
+        padding: 12px;
     }
+
+    .poke-opcao-nome {
+        font-size: 13px;
+    }
+
+    .poke-total strong {
+        font-size: 21px;
+    }
+}
+
+
+/* =====================================================
+   CORREÇÕES — BOTÃO, CARRINHO E MONTE SEU POKE
+===================================================== */
+
+/* BOTÃO + DO CARDÁPIO */
+.produtos .btn-add,
+.produto .btn-add,
+.btn-add {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    padding: 0;
+    margin: 0 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #b88c32;
+    border-radius: 50%;
+    background: #c69b3c;
+    color: #111;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 31px;
+    font-weight: 800;
+    line-height: 1;
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.35);
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.produtos .btn-add:hover,
+.produto .btn-add:hover,
+.btn-add:hover {
+    background: #e0bf66;
+    border-color: #e0bf66;
+    color: #111;
+    transform: scale(1.07);
+}
+
+.btn-add:active {
+    transform: scale(.92);
+}
+
+/* Garante que o preço e o + fiquem na mesma linha */
+.produto .precos {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* CARRINHO */
+.carrinho-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    background: rgba(0,0,0,.78);
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-modal.aberto {
+    display: flex;
+}
+
+.carrinho {
+    width: min(680px, 100%);
+    max-height: min(90vh, 850px);
+    overflow-y: auto;
+    padding: 28px 22px 30px;
+    position: relative;
+
+    background: #0e0e0e;
+    color: #f4ead5;
+    border: 1px solid #6e5525;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.75);
+}
+
+.carrinho h2 {
+    margin: 0 50px 22px 0;
+    color: #d9b65c;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+
+.fechar-carrinho {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #6e5525;
+    border-radius: 50%;
+    background: #151515;
+    color: #d9b65c;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.item-carrinho {
+    width: 100%;
+    min-height: 92px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    background: #151515;
+    border: 1px solid #4b3b20;
+    border-radius: 8px;
+}
+
+.item-carrinho > div:first-child {
+    min-width: 0;
+    flex: 1;
+}
+
+.item-carrinho h4 {
+    margin: 0 0 7px;
+    color: #eee4d2;
+    font-size: 18px;
+}
+
+.item-carrinho p {
+    margin: 0;
+    color: #d3ad54;
+    font-weight: 700;
+}
+
+.quantidade,
+.quantidade-poke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.quantidade button,
+.quantidade-poke button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #b88c32;
+    border-radius: 50%;
+    background: #c69b3c;
+    color: #111;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.quantidade button:hover,
+.quantidade-poke button:hover {
+    background: #e0bf66;
+    transform: scale(1.06);
+}
+
+.quantidade span,
+.quantidade-poke span {
+    min-width: 24px;
+    text-align: center;
+    color: #f1e7d4;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.total-carrinho {
+    width: 100%;
+    padding: 20px;
+    margin: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #18150f;
+    border: 1px solid #5b4720;
+    border-radius: 8px;
+    color: #d8bd76;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-carrinho strong {
+    color: #e4c46d;
+    font-size: 27px;
+}
+
+.pagamento {
+    padding: 18px;
+    background: #151515;
+    border: 1px solid #3e321d;
+    border-radius: 8px;
+}
+
+.pagamento h3 {
+    margin: 0 0 10px;
+    color: #d9b65c;
+    font-size: 20px;
+}
+
+.pagamento label {
+    display: block;
+    padding: 10px 4px;
+    color: #eee4d2;
+    font-weight: 600;
+}
+
+.pagamento input {
+    margin-right: 9px;
+    accent-color: #c69b3c;
+}
+
+.finalizar {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 18px;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 7px;
+    background: #c69b3c;
+    color: #080808;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* MONTE SEU POKE */
+.poke-container {
+    padding: 20px;
+    background: linear-gradient(145deg,#121212,#0b0b0b);
+    border: 1px solid #5c4720;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.45);
+}
+
+.poke-descricao {
+    margin: 0 0 18px;
+    color: #99948a;
+    line-height: 1.5;
+}
+
+.poke-item {
+    width: 100%;
+    min-height: 82px;
+    margin-bottom: 12px;
+    padding: 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #151515;
+    border: 1px solid #3e321d;
+    border-radius: 7px;
+}
+
+.poke-item h3 {
+    margin: 0 0 5px;
+    color: #eee4d2;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.poke-item p {
+    margin: 0;
+    color: #d3ad54;
+    font-weight: 700;
+}
+
+.poke-total {
+    width: 100%;
+    margin-top: 16px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #18150f;
+    border: 1px solid #5b4720;
+    border-radius: 7px;
+    color: #d8bd76;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.poke-total strong {
+    color: #e4c46d;
+    font-size: 24px;
+}
+
+.poke-adicionar {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 14px;
+    border: 1px solid #dfb84e;
+    border-radius: 7px;
+    background: #c69b3c;
+    color: #080808;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .carrinho-modal { padding: 8px; align-items: flex-end; }
+    .carrinho { max-height: 92vh; padding: 22px 14px 24px; border-radius: 12px 12px 0 0; }
+    .carrinho h2 { font-size: 28px; }
+    .item-carrinho { padding: 13px; gap: 10px; }
+    .item-carrinho h4 { font-size: 16px; }
+    .quantidade button, .quantidade-poke button { width: 38px; height: 38px; min-width: 38px; }
+    .total-carrinho strong { font-size: 23px; }
+    .poke-container { padding: 14px; }
+    .poke-item { padding: 13px; }
+    .poke-item h3 { font-size: 18px; }
+    .poke-total { font-size: 17px; }
+    .poke-total strong { font-size: 22px; }
+    .btn-add { width: 50px; height: 50px; min-width: 50px; font-size: 29px; }
 }
