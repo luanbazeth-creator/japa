@@ -1326,3 +1326,320 @@ body {
     .poke-total strong { font-size: 22px; }
     .btn-add { width: 50px; height: 50px; min-width: 50px; font-size: 29px; }
 }
+
+
+/* =====================================================
+   MENU DE CATEGORIAS — VISÃO SEPARADA
+===================================================== */
+
+.pagina-categorias {
+    padding: 4px 16px 28px;
+}
+
+.titulo-categorias {
+    padding: 4px 5px 16px;
+}
+
+.titulo-categorias h2 {
+    margin: 0 0 5px;
+    color: #d7b65d;
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.titulo-categorias p {
+    margin: 0;
+    color: #99948a;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* sobrescreve o antigo menu horizontal */
+.pagina-categorias .categorias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding: 0;
+    overflow: visible;
+}
+
+.categoria-card {
+    width: 100%;
+    min-height: 88px;
+    padding: 17px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: left;
+    border: 1px solid #594720;
+    border-radius: 7px;
+    background: linear-gradient(145deg, #151515, #0c0c0c);
+    color: #f4ead5;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(0,0,0,.32);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.categoria-card span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.categoria-card strong {
+    color: #f1e4c8;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.categoria-card small {
+    color: #9f998d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.categoria-card b {
+    width: 47px;
+    height: 47px;
+    min-width: 47px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #d3ae51;
+    border-radius: 50%;
+    color: #d8b65e;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.categoria-card:hover {
+    transform: translateY(-2px);
+    border-color: #c69b3c;
+    background: linear-gradient(145deg, #1d1a14, #0c0c0c);
+}
+
+.categoria-card:hover b {
+    background: #c69b3c;
+    color: #0b0b0b;
+}
+
+.categoria-poke {
+    border-color: #8d6c28;
+}
+
+/* quando uma categoria é aberta, todas as outras somem */
+.secao {
+    display: none;
+}
+
+.secao.secao-ativa {
+    display: block;
+}
+
+.voltar-categorias {
+    display: none;
+    margin: 2px 20px 18px;
+    padding: 12px 16px;
+    border: 1px solid #594720;
+    border-radius: 5px;
+    background: #111;
+    color: #d7b65d;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.voltar-categorias.visivel {
+    display: inline-flex;
+    align-items: center;
+}
+
+body.categoria-aberta .pagina-categorias {
+    display: none;
+}
+
+body.categoria-aberta .voltar-categorias {
+    display: inline-flex;
+}
+
+body.categoria-aberta main {
+    min-height: 300px;
+}
+
+@media (max-width: 600px) {
+    .categoria-card {
+        min-height: 82px;
+        padding: 15px 14px;
+    }
+
+    .categoria-card strong {
+        font-size: 20px;
+    }
+
+    .categoria-card b {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 28px;
+    }
+}
+
+/* =====================================================
+   CONTROLES DE QUANTIDADE NOS PRODUTOS
+   Permite adicionar E remover sem abrir o carrinho.
+===================================================== */
+.controle-produto {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+}
+
+.btn-quantidade {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border: 1px solid #b88c32;
+    border-radius: 50%;
+    background: #c69b3c;
+    color: #080808;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: .18s ease;
+}
+
+.btn-quantidade:hover:not(:disabled) {
+    background: #e0bf66;
+    border-color: #e0bf66;
+    transform: scale(1.07);
+}
+
+.btn-quantidade:active:not(:disabled) {
+    transform: scale(.91);
+}
+
+.btn-quantidade:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.qtd-produto {
+    min-width: 20px;
+    text-align: center;
+    color: #f1e7d4;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* =====================================================
+   IMAGENS DOS PRODUTOS
+===================================================== */
+.produto-imagem {
+    width: 150px;
+    height: 120px;
+    overflow: hidden;
+    border: 1px solid #594720;
+    border-radius: 5px;
+    background: #151515;
+}
+
+.produto-imagem img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* =====================================================
+   CONTADOR DO CARRINHO
+===================================================== */
+.botao-carrinho-nav {
+    position: relative;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: 5px;
+    right: 50%;
+    transform: translateX(22px);
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: none;
+    place-items: center;
+    background: #c69b3c;
+    color: #090909;
+    border: 2px solid #0c0c0c;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.contador-carrinho.visivel {
+    display: grid;
+}
+
+/* =====================================================
+   RESULTADOS DA BUSCA
+===================================================== */
+.aviso-pesquisa {
+    display: none;
+    margin: 0 20px 16px;
+    padding: 10px 14px;
+    color: #d9b65c;
+    background: #111;
+    border: 1px solid #4e3d1e;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.aviso-pesquisa:not(:empty) {
+    display: block;
+}
+
+.secao.pesquisa-ativa {
+    display: block;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+@media (max-width: 600px) {
+    .produto-imagem {
+        width: 120px;
+        height: 105px;
+    }
+
+    .controle-produto {
+        gap: 5px;
+    }
+
+    .btn-quantidade {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 20px;
+    }
+
+    .qtd-produto {
+        font-size: 16px;
+        min-width: 17px;
+    }
+
+    .contador-carrinho {
+        top: 3px;
+        transform: translateX(20px);
+    }
+}
