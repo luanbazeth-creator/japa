@@ -265,7 +265,7 @@ function finalizarPedido() {
         linhasPedido.push(`💵 Troco: ${formatarMoeda(troco)}`);
     }
 
-    const numero = "55 22 998953298";
+    const numero = "5522998953298";
     const mensagem = encodeURIComponent(linhasPedido.join("\n"));
 
     window.open(
